@@ -1,24 +1,19 @@
 /**
- * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
- * @fileoverview Shape resize helper
+ * @author maxinminax <ng.nhuphu@gmail.com>
+ * @fileoverview CensorShape resize helper
  */
 const DIVISOR = {
-    rect: 1,
-    circle: 2,
-    triangle: 1
+    censorRect: 1,
+    censorCircle: 2
 };
 const DIMENSION_KEYS = {
-    rect: {
+    censorRect: {
         w: 'width',
         h: 'height'
     },
-    circle: {
+    censorCircle: {
         w: 'rx',
         h: 'ry'
-    },
-    triangle: {
-        w: 'width',
-        h: 'height'
     }
 };
 
@@ -65,7 +60,7 @@ function getPositionsOfRotatedOrigin(origin, pointer, angle) {
  */
 function hasCenterOrigin(shape) {
     return (shape.originX === 'center' &&
-            shape.originY === 'center');
+        shape.originY === 'center');
 }
 
 /**
@@ -78,7 +73,10 @@ function adjustOriginByStartPoint(pointer, shape) {
     const centerPoint = shape.getPointByOrigin('center', 'center');
     const angle = -shape.angle;
     const originPositions = getPositionsOfRotatedOrigin(centerPoint, pointer, angle);
-    const {originX, originY} = originPositions;
+    const {
+        originX,
+        originY
+    } = originPositions;
     const origin = shape.getPointByOrigin(originX, originY);
     const left = shape.left - (centerPoint.x - origin.x);
     const top = shape.top - (centerPoint.x - origin.y);
@@ -103,7 +101,10 @@ function adjustOriginByMovingPointer(pointer, shape) {
     const origin = shape.startPoint;
     const angle = -shape.angle;
     const originPositions = getPositionsOfRotatedOrigin(origin, pointer, angle);
-    const {originX, originY} = originPositions;
+    const {
+        originX,
+        originY
+    } = originPositions;
 
     shape.setPositionByOrigin(origin, originX, originY);
 }
@@ -114,7 +115,11 @@ function adjustOriginByMovingPointer(pointer, shape) {
  * @ignore
  */
 function adjustDimensionOnScaling(shape) {
-    const {type, scaleX, scaleY} = shape;
+    const {
+        type,
+        scaleX,
+        scaleY
+    } = shape;
     const dimensionKeys = DIMENSION_KEYS[type];
     let width = shape[dimensionKeys.w] * scaleX;
     let height = shape[dimensionKeys.h] * scaleY;
@@ -146,10 +151,13 @@ function adjustDimensionOnScaling(shape) {
  * @ignore
  */
 function adjustDimensionOnMouseMove(pointer, shape) {
-    const {type, strokeWidth, startPoint: origin} = shape;
+    const {
+        type,
+        strokeWidth,
+        startPoint: origin
+    } = shape;
     const divisor = DIVISOR[type];
     const dimensionKeys = DIMENSION_KEYS[type];
-    const isTriangle = !!(shape.type === 'triangle');
     const options = {};
     let width = Math.abs(origin.x - pointer.x) / divisor;
     let height = Math.abs(origin.y - pointer.y) / divisor;
@@ -164,10 +172,6 @@ function adjustDimensionOnMouseMove(pointer, shape) {
 
     if (shape.isRegular) {
         width = height = Math.max(width, height);
-
-        if (isTriangle) {
-            height = Math.sqrt(3) / 2 * width;
-        }
     }
 
     options[dimensionKeys.w] = width;

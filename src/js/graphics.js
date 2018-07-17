@@ -15,11 +15,13 @@ import Text from './component/text';
 import Icon from './component/icon';
 import Filter from './component/filter';
 import Shape from './component/shape';
+import Censor from './component/censor';
 import CropperDrawingMode from './drawingMode/cropper';
 import FreeDrawingMode from './drawingMode/freeDrawing';
 import LineDrawingMode from './drawingMode/lineDrawing';
 import ShapeDrawingMode from './drawingMode/shape';
 import TextDrawingMode from './drawingMode/text';
+import CensorDrawingMode from './drawingMode/censor';
 import consts from './consts';
 import util from './util';
 
@@ -148,7 +150,8 @@ class Graphics {
             onObjectSelected: this._onObjectSelected.bind(this),
             onPathCreated: this._onPathCreated.bind(this),
             onSelectionCleared: this._onSelectionCleared.bind(this),
-            onSelectionCreated: this._onSelectionCreated.bind(this)
+            onSelectionCreated: this._onSelectionCreated.bind(this),
+            onSelectionUpdated: this._onSelectionUpdated.bind(this)
         };
 
         this._setCanvasElement(element);
@@ -269,11 +272,11 @@ class Graphics {
             canvas.discardActiveGroup(); // restore states for each objects
             target.forEachObject(obj => {
                 objects.push(obj);
-                obj.remove();
+                this._canvas.remove(obj);
             });
         } else if (canvas.contains(target)) {
             objects.push(target);
-            target.remove();
+            this._canvas.remove(target);
         }
 
         return objects;
@@ -602,6 +605,10 @@ class Graphics {
         this.getComponent(components.ICON).registerPaths(pathInfos);
     }
 
+    setDrawingCensor(type, options) {
+        this.getComponent(components.CENSOR).setStates(type, options);
+    }
+
     /**
      * Change cursor style
      * @param {string} cursorType - cursor type
@@ -789,6 +796,7 @@ class Graphics {
         this._register(this._drawingModeMap, new LineDrawingMode());
         this._register(this._drawingModeMap, new ShapeDrawingMode());
         this._register(this._drawingModeMap, new TextDrawingMode());
+        this._register(this._drawingModeMap, new CensorDrawingMode());
     }
 
     /**
@@ -806,6 +814,7 @@ class Graphics {
         this._register(this._componentMap, new Icon(this));
         this._register(this._componentMap, new Filter(this));
         this._register(this._componentMap, new Shape(this));
+        this._register(this._componentMap, new Censor(this));
     }
 
     /**
@@ -886,10 +895,11 @@ class Graphics {
             'object:removed': handler.onObjectRemoved,
             'object:moving': handler.onObjectMoved,
             'object:scaling': handler.onObjectScaled,
-            'object:selected': handler.onObjectSelected,
+            // 'object:selected': handler.onObjectSelected,
             'path:created': handler.onPathCreated,
             'selection:cleared': handler.onSelectionCleared,
-            'selection:created': handler.onSelectionCreated
+            'selection:created': handler.onSelectionCreated,
+            'selection:updated': handler.onSelectionUpdated
         });
     }
 
@@ -978,7 +988,7 @@ class Graphics {
     }
 
     /**
-     * "selction:cleared" canvas event handler
+     * "selection:cleared" canvas event handler
      * @private
      */
     _onSelectionCleared() {
@@ -986,19 +996,35 @@ class Graphics {
     }
 
     /**
-     * "selction:created" canvas event handler
+     * "selection:created" canvas event handler
      * @param {{target: fabric.Object, e: MouseEvent}} fEvent - Fabric event
      * @private
      */
     _onSelectionCreated(fEvent) {
         this.fire(events.SELECTION_CREATED, fEvent.target);
+
+        if (fEvent.selected.length === 1) {
+            this._onObjectSelected(fEvent);
+        }
+    }
+
+    /**
+     * "selection:updated" canvas event handler
+     * @param {{target: fabric.Object, e: MouseEvent}} fEvent - Fabric event
+     * @private
+     */
+    _onSelectionUpdated(fEvent) {
+        this.fire(events.SELECTION_CREATED, fEvent.target);
+
+        if (fEvent.selected.length === 1) {
+            this._onObjectSelected(fEvent);
+        }
     }
 
     /**
      * Canvas discard selection all
      */
     discardSelection() {
-        this._canvas.discardActiveGroup();
         this._canvas.discardActiveObject();
         this._canvas.renderAll();
     }
@@ -1039,6 +1065,8 @@ class Graphics {
 
         if (['i-text', 'text'].indexOf(obj.type) > -1) {
             extend(props, this._createTextProperties(obj, props));
+        } else if (obj.type.indexOf('censor') === 0) {
+            extend(props, this._createCensorProperties(obj, props));
         }
 
         return props;
@@ -1058,6 +1086,22 @@ class Graphics {
             'fontStyle',
             'textAlign',
             'textDecoration'
+        ];
+        const props = {};
+        extend(props, util.getProperties(obj, predefinedKeys));
+
+        return props;
+    }
+
+    /**
+     * Get text object's properties
+     * @param {fabric.Object} obj - fabric text object
+     * @param {Object} props - properties
+     * @returns {Object} properties object
+     */
+    _createCensorProperties(obj) {
+        const predefinedKeys = [
+            'filter'
         ];
         const props = {};
         extend(props, util.getProperties(obj, predefinedKeys));

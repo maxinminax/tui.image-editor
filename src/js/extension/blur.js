@@ -16,7 +16,7 @@ const Blur = fabric.util.createClass(fabric.Image.filters.Convolute, /** @lends 
      * @param {String} type
      * @default
      */
-    type: 'Blur',
+    type: 'ConvoluteBlur',
 
     /**
      * constructor

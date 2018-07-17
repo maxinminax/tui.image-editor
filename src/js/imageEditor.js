@@ -316,15 +316,14 @@ class ImageEditor {
      * Remove Active Object
      */
     removeActiveObject() {
-        const activeObject = this._graphics.getActiveObject();
-        const activeObjectGroup = this._graphics.getActiveGroupObject();
+        const selection = this._graphics.getActiveObject();
 
-        if (activeObjectGroup) {
-            const objects = activeObjectGroup.getObjects();
+        if (selection.type === 'activeSelection') {
+            const objects = selection.getObjects();
             this.discardSelection();
             this._removeObjectStream(objects);
-        } else if (activeObject) {
-            const activeObjectId = this._graphics.getObjectId(activeObject);
+        } else {
+            const activeObjectId = this._graphics.getObjectId(selection);
             this.removeObject(activeObjectId);
         }
     }
@@ -1222,6 +1221,22 @@ class ImageEditor {
      */
     applyFilter(type, options) {
         return this.execute(commands.APPLY_FILTER, type, options);
+    }
+
+    setDrawingCensor(type, options) {
+        this._graphics.setDrawingCensor(type, options);
+    }
+
+    addCensor(type, options) {
+        options = options || {};
+
+        this._setPositions(options);
+
+        return this.execute(commands.ADD_CENSOR, type, options);
+    }
+
+    changeCensor(id, options) {
+        return this.execute(commands.CHANGE_CENSOR, id, options);
     }
 
     /**

@@ -8,7 +8,7 @@ import fabric from 'fabric/dist/fabric.require';
 import Component from '../interface/component';
 import Mask from '../extension/mask';
 import consts from '../consts';
-import Blur from '../extension/blur';
+// import Blur from '../extension/blur';
 import Sharpen from '../extension/sharpen';
 import Emboss from '../extension/emboss';
 import ColorFilter from '../extension/colorFilter';
@@ -16,7 +16,7 @@ import ColorFilter from '../extension/colorFilter';
 const {rejectMessages} = consts;
 const {filters} = fabric.Image;
 filters.Mask = Mask;
-filters.Blur = Blur;
+// filters.Blur = Blur;
 filters.Sharpen = Sharpen;
 filters.Emboss = Emboss;
 filters.ColorFilter = ColorFilter;
@@ -140,7 +140,8 @@ class Filter extends Component {
      * @private
      */
     _apply(sourceImg, callback) {
-        sourceImg.applyFilters(callback);
+        sourceImg.applyFilters();
+        callback();
     }
 
     /**

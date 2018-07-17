@@ -10,6 +10,8 @@ var rImageType = /data:(image\/.+);base64,/;
 var shapeOptions = {};
 var shapeType;
 var activeObjectId;
+var censorType;
+var censorOptions = {};
 
 // Buttons
 var $btns = $('.menu-item');
@@ -41,6 +43,7 @@ var $btnMaskFilter = $('#btn-mask-filter');
 var $btnImageFilter = $('#btn-image-filter');
 var $btnLoadMaskImage = $('#input-mask-image-file');
 var $btnApplyMask = $('#btn-apply-mask');
+var $btnCensor = $('#btn-censor');
 var $btnClose = $('.close');
 
 // Input etc.
@@ -86,6 +89,9 @@ var $textSubMenu = $('#text-sub-menu');
 var $iconSubMenu = $('#icon-sub-menu');
 var $filterSubMenu = $('#filter-sub-menu');
 var $imageFilterSubMenu = $('#image-filter-sub-menu');
+var $censorSubMenu = $('#censor-sub-menu');
+
+var $inputCensorFilter = $('[name="select-censor-filter"]');
 
 // Select line type
 var $selectLine = $('[name="select-line-type"]');
@@ -216,6 +222,13 @@ function activateTextMode() {
     }
 }
 
+function activateCensorMode() {
+    if (imageEditor.getDrawingMode() !== 'CENSOR') {
+        imageEditor.stopDrawingMode();
+        imageEditor.startDrawingMode('CENSOR');
+    }
+}
+
 function setTextToolbar(obj) {
     var fontSize = obj.fontSize;
     var fontColor = obj.fill;
@@ -254,6 +267,10 @@ function setShapeToolbar(obj) {
     $inputStrokeWidthRange.val(obj.strokeWidth);
 }
 
+function setCensorToolbar(obj) {
+    $inputCensorFilter.val([obj.filter]);
+}
+
 function showSubMenu(type) {
     var $submenu;
 
@@ -266,6 +283,9 @@ function showSubMenu(type) {
             break;
         case 'text':
             $submenu = $textSubMenu;
+            break;
+        case 'censor':
+            $submenu = $censorSubMenu;
             break;
         default:
             $submenu = 0;
@@ -332,6 +352,10 @@ imageEditor.on({
             showSubMenu('text');
             setTextToolbar(obj);
             activateTextMode();
+        } else if (obj.type === 'censorRect' || obj.type === 'censorCircle') {
+            showSubMenu('censor');
+            setCensorToolbar(obj);
+            activateCensorMode();
         }
     },
     mousedown: function(event, originPointer) {
@@ -918,6 +942,33 @@ $inputRangeColorFilterValue.on('change', function() {
     applyOrRemoveFilter($inputCheckColorFilter.is(':checked'), 'colorFilter', {
         threshold: this.value
     });
+});
+
+// Control censor
+$btnCensor.on('click', function() {
+    showSubMenu('censor');
+
+    // step 1. get options to draw censor from toolbar
+    const censorType = $('[name="select-censor-type"]:checked').val();
+    const censorFilter = $('[name="select-censor-filter"]:checked').val();
+
+    // step 2. set options to draw shape
+    imageEditor.setDrawingCensor(censorType, {
+        filter: censorFilter
+    });
+
+    // step 3. start drawing shape mode
+    activateCensorMode();
+});
+
+$inputCensorFilter.on('change', function () {
+    var filter = $(this).val();
+
+    imageEditor.changeCensor(activeObjectId, {
+        filter: filter
+    });
+
+    imageEditor.setDrawingShape(censorType, censorOptions);
 });
 
 // Etc..

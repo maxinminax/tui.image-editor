@@ -4,7 +4,8 @@
  */
 const DIVISOR = {
     censorRect: 1,
-    censorCircle: 2
+    censorCircle: 2,
+    censorTriangle: 1
 };
 const DIMENSION_KEYS = {
     censorRect: {
@@ -14,6 +15,10 @@ const DIMENSION_KEYS = {
     censorCircle: {
         w: 'rx',
         h: 'ry'
+    },
+    censorTriangle: {
+        w: 'width',
+        h: 'height'
     }
 };
 
@@ -73,10 +78,7 @@ function adjustOriginByStartPoint(pointer, shape) {
     const centerPoint = shape.getPointByOrigin('center', 'center');
     const angle = -shape.angle;
     const originPositions = getPositionsOfRotatedOrigin(centerPoint, pointer, angle);
-    const {
-        originX,
-        originY
-    } = originPositions;
+    const {originX, originY} = originPositions;
     const origin = shape.getPointByOrigin(originX, originY);
     const left = shape.left - (centerPoint.x - origin.x);
     const top = shape.top - (centerPoint.x - origin.y);
@@ -115,11 +117,7 @@ function adjustOriginByMovingPointer(pointer, shape) {
  * @ignore
  */
 function adjustDimensionOnScaling(shape) {
-    const {
-        type,
-        scaleX,
-        scaleY
-    } = shape;
+    const {type, scaleX, scaleY} = shape;
     const dimensionKeys = DIMENSION_KEYS[type];
     let width = shape[dimensionKeys.w] * scaleX;
     let height = shape[dimensionKeys.h] * scaleY;
@@ -151,13 +149,10 @@ function adjustDimensionOnScaling(shape) {
  * @ignore
  */
 function adjustDimensionOnMouseMove(pointer, shape) {
-    const {
-        type,
-        strokeWidth,
-        startPoint: origin
-    } = shape;
+    const {type, strokeWidth, startPoint: origin} = shape;
     const divisor = DIVISOR[type];
     const dimensionKeys = DIMENSION_KEYS[type];
+    const isTriangle = !!(shape.type === 'triangle');
     const options = {};
     let width = Math.abs(origin.x - pointer.x) / divisor;
     let height = Math.abs(origin.y - pointer.y) / divisor;
@@ -172,6 +167,10 @@ function adjustDimensionOnMouseMove(pointer, shape) {
 
     if (shape.isRegular) {
         width = height = Math.max(width, height);
+
+        if (isTriangle) {
+            height = Math.sqrt(3) / 2 * width;
+        }
     }
 
     options[dimensionKeys.w] = width;

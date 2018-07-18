@@ -6,6 +6,8 @@ import fabric from 'fabric/dist/fabric.require';
 import Promise from 'core-js/library/es6/promise';
 import Component from '../interface/component';
 import CensorRect from '../extension/censorRect';
+import CensorCircle from '../extension/censorCircle';
+import CensorTriangle from '../extension/censorTriangle';
 import consts from '../consts';
 import resizeHelper from '../helper/censorResizeHelper';
 import {
@@ -22,27 +24,25 @@ const KEY_CODES = consts.keyCodes;
 const DEFAULT_TYPE = 'rect';
 const DEFAULT_OPTIONS = {
     strokeWidth: 0,
-    // stroke: '#000000',
+    stroke: 'red',
     fill: 'transparent',
-    width: 10,
-    height: 10,
+    width: 0,
+    height: 0,
     rx: 0,
     ry: 0,
     lockSkewingX: true,
     lockSkewingY: true,
-    lockUniScaling: false,
+    lockUniScaling: true,
     bringForward: true,
     isRegular: false,
     transparentCorners: false,
     hasRotatingPoint: false,
-    lockRotation: false,
+    lockRotation: true,
     objectCaching: false,
-    originX: 'center',
-    originY: 'center',
     filter: 'blur'
 };
 
-const shapeType = ['censorRect', 'censorCircle', 'triangle'];
+const shapeType = ['censorRect', 'censorCircle', 'censorTriangle'];
 const filters = ['pixelate', 'blur'];
 
 /**
@@ -244,12 +244,10 @@ class Censor extends Component {
                 instance = new CensorRect(options);
                 break;
             case 'circle':
-                instance = new fabric.Ellipse(extend({
-                    type: 'circle'
-                }, options));
+                instance = new CensorCircle(options);
                 break;
             case 'triangle':
-                instance = new fabric.Triangle(options);
+                instance = new CensorTriangle(options);
                 break;
             default:
                 instance = {};
@@ -291,6 +289,9 @@ class Censor extends Component {
                 resizeHelper.setOrigins(self._shapeObj);
             },
             selected() {
+                this.set({
+                    strokeWidth: 2
+                });
                 self._isSelected = true;
                 self._shapeObj = this;
                 canvas.uniScaleTransform = true;
@@ -298,6 +299,9 @@ class Censor extends Component {
                 resizeHelper.setOrigins(self._shapeObj);
             },
             deselected() {
+                this.set({
+                    strokeWidth: 0
+                });
                 self._isSelected = false;
                 self._shapeObj = null;
                 canvas.defaultCursor = 'crosshair';
@@ -383,11 +387,9 @@ class Censor extends Component {
 
         if (shape) {
             resizeHelper.adjustOriginToCenter(shape);
+            this._setCensorImage(this._shapeObj, this._options);
+            this.fire(eventNames.ADD_OBJECT_AFTER, this.graphics.createObjectProperties(shape));
         }
-
-        this._setCensorImage(this._shapeObj, this._options);
-
-        this.fire(eventNames.ADD_OBJECT_AFTER, this.graphics.createObjectProperties(shape));
 
         canvas.off({
             'mouse:move': this._handlers.mousemove,
@@ -425,8 +427,9 @@ class Censor extends Component {
         }
     }
 
+    // eslint-disable-next-line complexity
     _setCensorImage(shapeObj, options) {
-        if (options.filter && inArray(options.filter, filters) > -1) {
+        if (shapeObj && options.filter && inArray(options.filter, filters) > -1) {
             let censoredImage = shapeObj.get('censoredImage');
             if (!censoredImage) {
                 const sourceImg = this.getCanvasImage();

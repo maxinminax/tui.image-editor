@@ -1,22 +1,22 @@
 /**
  * @author maxinminax <ng.nhuphu@gmail.com>
- * @fileoverview CensorRect extending fabric.Rect
+ * @fileoverview CensorCircle extending fabric.Rect
  */
 import fabric from 'fabric/dist/fabric.require';
 
 /**
- * CensorRect object
- * @class CensorRect
+ * CensorCircle object
+ * @class CensorCircle
  * @extends {fabric.Rect}
  * @ignore
  */
-const CensorRect = fabric.util.createClass(fabric.Rect, /** @lends Rect.prototype */ {
+const CensorCircle = fabric.util.createClass(fabric.Ellipse, /** @lends Rect.prototype */ {
     /**
      * type
      * @param {String} type
      * @default
      */
-    type: 'censorRect',
+    type: 'censorCircle',
 
     /**
      * constructor
@@ -60,7 +60,12 @@ const CensorRect = fabric.util.createClass(fabric.Rect, /** @lends Rect.prototyp
 
         ctx.save();
         ctx.beginPath();
-        ctx.rect(-halfWidth, -halfHeight, width, height);
+
+        ctx.save();
+        ctx.transform(1, 0, 0, this.ry / this.rx, 0, 0);
+        ctx.arc(0, 0, this.rx, 0, Math.PI * 2, false);
+        ctx.restore();
+
         ctx.clip();
         ctx.closePath();
 
@@ -74,4 +79,4 @@ const CensorRect = fabric.util.createClass(fabric.Rect, /** @lends Rect.prototyp
     }
 });
 
-module.exports = CensorRect;
+module.exports = CensorCircle;

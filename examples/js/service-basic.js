@@ -93,6 +93,8 @@ var $censorSubMenu = $('#censor-sub-menu');
 
 var $inputCensorFilter = $('[name="select-censor-filter"]');
 
+var $selectCensorType = $('[name="select-censor-type"]');
+
 // Select line type
 var $selectLine = $('[name="select-line-type"]');
 
@@ -352,7 +354,7 @@ imageEditor.on({
             showSubMenu('text');
             setTextToolbar(obj);
             activateTextMode();
-        } else if (obj.type === 'censorRect' || obj.type === 'censorCircle') {
+        } else if (obj.type === 'censorRect' || obj.type === 'censorCircle' || obj.type === 'censorTriangle') {
             showSubMenu('censor');
             setCensorToolbar(obj);
             activateCensorMode();
@@ -949,15 +951,13 @@ $btnCensor.on('click', function() {
     showSubMenu('censor');
 
     // step 1. get options to draw censor from toolbar
-    const censorType = $('[name="select-censor-type"]:checked').val();
-    const censorFilter = $('[name="select-censor-filter"]:checked').val();
+    censorType = censorType = $('[name="select-censor-type"]:checked').val();
+    censorOptions.filter = $('[name="select-censor-filter"]:checked').val();
 
-    // step 2. set options to draw shape
-    imageEditor.setDrawingCensor(censorType, {
-        filter: censorFilter
-    });
+    // step 2. set options to draw censor
+    imageEditor.setDrawingCensor(censorType, censorOptions);
 
-    // step 3. start drawing shape mode
+    // step 3. start drawing censor mode
     activateCensorMode();
 });
 
@@ -968,7 +968,13 @@ $inputCensorFilter.on('change', function () {
         filter: filter
     });
 
-    imageEditor.setDrawingShape(censorType, censorOptions);
+    imageEditor.setDrawingCensor(censorType, censorOptions);
+});
+
+$selectCensorType.on('change', function () {
+    censorType = $(this).val();
+
+    imageEditor.setDrawingCensor(censorType);
 });
 
 // Etc..

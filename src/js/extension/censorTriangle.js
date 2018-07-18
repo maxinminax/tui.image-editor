@@ -1,22 +1,22 @@
 /**
  * @author maxinminax <ng.nhuphu@gmail.com>
- * @fileoverview CensorRect extending fabric.Rect
+ * @fileoverview CensorTriangle extending fabric.Rect
  */
 import fabric from 'fabric/dist/fabric.require';
 
 /**
- * CensorRect object
- * @class CensorRect
+ * CensorTriangle object
+ * @class CensorTriangle
  * @extends {fabric.Rect}
  * @ignore
  */
-const CensorRect = fabric.util.createClass(fabric.Rect, /** @lends Rect.prototype */ {
+const CensorTriangle = fabric.util.createClass(fabric.Triangle, /** @lends Rect.prototype */ {
     /**
      * type
      * @param {String} type
      * @default
      */
-    type: 'censorRect',
+    type: 'censorTriangle',
 
     /**
      * constructor
@@ -60,7 +60,12 @@ const CensorRect = fabric.util.createClass(fabric.Rect, /** @lends Rect.prototyp
 
         ctx.save();
         ctx.beginPath();
-        ctx.rect(-halfWidth, -halfHeight, width, height);
+
+        ctx.moveTo(-halfWidth, halfHeight);
+        ctx.lineTo(0, -halfHeight);
+        ctx.lineTo(halfWidth, halfHeight);
+        ctx.moveTo(-halfWidth, halfHeight);
+
         ctx.clip();
         ctx.closePath();
 
@@ -74,4 +79,4 @@ const CensorRect = fabric.util.createClass(fabric.Rect, /** @lends Rect.prototyp
     }
 });
 
-module.exports = CensorRect;
+module.exports = CensorTriangle;

@@ -10,7 +10,7 @@ import action from './action';
 import commandFactory from './factory/command';
 import Graphics from './graphics';
 import consts from './consts';
-import util from '../util';
+import util from './util';
 
 const events = consts.eventNames;
 const commands = consts.commandNames;

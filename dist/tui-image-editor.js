@@ -62,6 +62,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	__webpack_require__(1);
 
 	var _imageEditor = __webpack_require__(2);
@@ -114,7 +118,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	module.exports = _imageEditor2.default;
+	exports.default = _imageEditor2.default;
 
 	// commands
 
@@ -591,6 +595,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @fileoverview Image-editor application class
@@ -631,6 +639,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _util = __webpack_require__(72);
 
+	var _util2 = _interopRequireDefault(_util);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -642,6 +652,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var isUndefined = _tuiCodeSnippet2.default.isUndefined,
 	    forEach = _tuiCodeSnippet2.default.forEach,
 	    CustomEvents = _tuiCodeSnippet2.default.CustomEvents;
+	var sendHostName = _util2.default.sendHostName;
 
 	/**
 	 * Image editor
@@ -755,7 +766,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        });
 
 	        if (options.usageStatistics) {
-	            (0, _util.sendHostName)();
+	            sendHostName();
 	        }
 
 	        if (this.ui) {
@@ -2359,7 +2370,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	_action2.default.mixin(ImageEditor);
 	CustomEvents.mixin(ImageEditor);
 
-	module.exports = ImageEditor;
+	exports.default = ImageEditor;
 
 /***/ }),
 /* 3 */
@@ -3824,6 +3835,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @fileoverview Invoker - invoke commands
@@ -4183,13 +4198,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	}();
 
 	CustomEvents.mixin(Invoker);
-	module.exports = Invoker;
+	exports.default = Invoker;
 
 /***/ }),
 /* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _command = __webpack_require__(70);
 
@@ -4235,7 +4254,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    commands[command.name] = command;
 	}
 
-	module.exports = {
+	exports.default = {
 	    create: create,
 	    register: register
 	};
@@ -4245,6 +4264,10 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
@@ -4376,7 +4399,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return Command;
 	}();
 
-	module.exports = Command;
+	exports.default = Command;
 
 /***/ }),
 /* 71 */
@@ -4384,11 +4407,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
 	var _tuiCodeSnippet = __webpack_require__(3);
 
 	var _tuiCodeSnippet2 = _interopRequireDefault(_tuiCodeSnippet);
 
 	var _util = __webpack_require__(72);
+
+	var _util2 = _interopRequireDefault(_util);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -4396,7 +4425,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
 	 * @fileoverview Error-message factory
 	 */
-	var types = (0, _util.keyMirror)('UN_IMPLEMENTATION', 'NO_COMPONENT_NAME');
+	var keyMirror = _util2.default.keyMirror;
+
+
+	var types = keyMirror('UN_IMPLEMENTATION', 'NO_COMPONENT_NAME');
 	var messages = {
 	    UN_IMPLEMENTATION: 'Should implement a method: ',
 	    NO_COMPONENT_NAME: 'Should set a component name'
@@ -4410,7 +4442,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	};
 
-	module.exports = {
+	exports.default = {
 	    types: _tuiCodeSnippet2.default.extend({}, types),
 
 	    create: function create(type) {
@@ -4431,6 +4463,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
 	var _tuiCodeSnippet = __webpack_require__(3);
 
 	var min = Math.min,
@@ -4441,7 +4477,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var hostnameSent = false;
 
-	module.exports = {
+	exports.default = {
 	    /**
 	     * Clamp value
 	     * @param {number} value - Value
@@ -4663,13 +4699,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
 	var _util = __webpack_require__(72);
 
 	var _util2 = _interopRequireDefault(_util);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	module.exports = {
+	exports.default = {
 	    /**
 	     * Component names
 	     * @type {Object.<string, string>}
@@ -5648,6 +5688,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _util = __webpack_require__(72);
 
+	var _util2 = _interopRequireDefault(_util);
+
 	var _style = __webpack_require__(78);
 
 	var _style2 = _interopRequireDefault(_style);
@@ -5660,18 +5702,21 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+	var styleLoad = _util2.default.styleLoad;
+
 	/**
 	 * Theme manager
 	 * @class
 	 * @param {Object} customTheme - custom theme
 	 * @ignore
 	 */
+
 	var Theme = function () {
 	    function Theme(customTheme) {
 	        _classCallCheck(this, Theme);
 
 	        this.styles = this._changeToObject((0, _tuiCodeSnippet.extend)(_standard2.default, customTheme));
-	        (0, _util.styleLoad)(this._styleMaker());
+	        styleLoad(this._styleMaker());
 	    }
 
 	    /**
@@ -6104,7 +6149,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _util = __webpack_require__(72);
 
+	var _util2 = _interopRequireDefault(_util);
+
 	var _consts = __webpack_require__(73);
+
+	var _consts2 = _interopRequireDefault(_consts);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -6113,6 +6162,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var toInteger = _util2.default.toInteger;
+	var defaultShapeStrokeValus = _consts2.default.defaultShapeStrokeValus;
+
 
 	var SHAPE_DEFAULT_OPTION = {
 	    stroke: '#ffbb3b',
@@ -6148,7 +6201,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        _this._els = {
 	            shapeSelectButton: _this.selector('#tie-shape-button'),
 	            shapeColorButton: _this.selector('#tie-shape-color-button'),
-	            strokeRange: new _range2.default(_this.selector('#tie-stroke-range'), _consts.defaultShapeStrokeValus),
+	            strokeRange: new _range2.default(_this.selector('#tie-stroke-range'), defaultShapeStrokeValus),
 	            strokeRangeValue: _this.selector('#tie-stroke-range-value'),
 	            fillColorpicker: new _colorpicker2.default(_this.selector('#tie-color-fill'), '', _this.toggleDirection),
 	            strokeColorpicker: new _colorpicker2.default(_this.selector('#tie-color-stroke'), '#ffbb3b', _this.toggleDirection)
@@ -6236,7 +6289,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        value: function setMaxStrokeValue(maxValue) {
 	            var strokeMaxValue = maxValue;
 	            if (strokeMaxValue <= 0) {
-	                strokeMaxValue = _consts.defaultShapeStrokeValus.max;
+	                strokeMaxValue = defaultShapeStrokeValus.max;
 	            }
 	            this._els.strokeRange.max = strokeMaxValue;
 	        }
@@ -6301,8 +6354,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }, {
 	        key: '_changeStrokeRangeHandler',
 	        value: function _changeStrokeRangeHandler(value) {
-	            this.options.strokeWidth = (0, _util.toInteger)(value);
-	            this._els.strokeRangeValue.value = (0, _util.toInteger)(value);
+	            this.options.strokeWidth = toInteger(value);
+	            this._els.strokeRangeValue.value = toInteger(value);
 
 	            this.actions.changeShape({
 	                strokeWidth: value
@@ -6367,6 +6420,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _util = __webpack_require__(72);
 
+	var _util2 = _interopRequireDefault(_util);
+
 	var _tuiColorPicker = __webpack_require__(82);
 
 	var _tuiColorPicker2 = _interopRequireDefault(_tuiColorPicker);
@@ -6374,6 +6429,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var toInteger = _util2.default.toInteger;
 
 	var PICKER_COLOR = ['#000000', '#2a2a2a', '#545454', '#7e7e7e', '#a8a8a8', '#d2d2d2', '#ffffff', '', '#ff4040', '#ff6518', '#ffbb3b', '#03bd9e', '#00a9ff', '#515ce6', '#9e5fff', '#ff5583'];
 
@@ -6521,8 +6578,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        key: '_setPickerControlPosition',
 	        value: function _setPickerControlPosition() {
 	            var controlStyle = this.pickerControl.style;
-	            var left = (0, _util.toInteger)(window.getComputedStyle(this.pickerControl, null).width) / 2 - 20;
-	            var top = ((0, _util.toInteger)(window.getComputedStyle(this.pickerControl, null).height) + 12) * -1;
+	            var left = toInteger(window.getComputedStyle(this.pickerControl, null).width) / 2 - 20;
+	            var top = (toInteger(window.getComputedStyle(this.pickerControl, null).height) + 12) * -1;
 
 	            if (this._toggleDirection === 'down') {
 	                top = 30;
@@ -9790,15 +9847,20 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _util = __webpack_require__(72);
 
+	var _util2 = _interopRequireDefault(_util);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var toInteger = _util2.default.toInteger;
 
 	/**
 	 * Range control class
 	 * @class
 	 * @ignore
 	 */
+
 	var Range = function () {
 	    function Range(rangeElement) {
 	        var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
@@ -9809,7 +9871,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.rangeElement = rangeElement;
 	        this._drawRangeElement();
 
-	        this.rangeWidth = (0, _util.toInteger)(window.getComputedStyle(rangeElement, null).width) - 12;
+	        this.rangeWidth = toInteger(window.getComputedStyle(rangeElement, null).width) - 12;
 	        this._min = options.min || 0;
 	        this._max = options.max || 100;
 	        this._absMax = this._min * -1 + this._max;
@@ -9901,7 +9963,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	            this.pointer.addEventListener('mousedown', function (event) {
 	                _this2.firstPosition = event.screenX;
-	                _this2.firstLeft = (0, _util.toInteger)(_this2.pointer.style.left) || 0;
+	                _this2.firstLeft = toInteger(_this2.pointer.style.left) || 0;
 	                _this2.dragEventHandler = {
 	                    changeAngle: _this2._changeAngle.bind(_this2),
 	                    stopChangingAngle: _this2._stopChangingAngle.bind(_this2)
@@ -10428,7 +10490,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _util = __webpack_require__(72);
 
+	var _util2 = _interopRequireDefault(_util);
+
 	var _consts = __webpack_require__(73);
+
+	var _consts2 = _interopRequireDefault(_consts);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10437,6 +10503,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var toInteger = _util2.default.toInteger;
+	var defaultRotateRangeValus = _consts2.default.defaultRotateRangeValus;
+
 
 	var CLOCKWISE = 30;
 	var COUNTERCLOCKWISE = -30;
@@ -10465,7 +10535,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        _this._els = {
 	            rotateButton: _this.selector('#tie-retate-button'),
-	            rotateRange: new _range2.default(_this.selector('#tie-rotate-range'), _consts.defaultRotateRangeValus),
+	            rotateRange: new _range2.default(_this.selector('#tie-rotate-range'), defaultRotateRangeValus),
 	            rotateRangeValue: _this.selector('#tie-ratate-range-value')
 	        };
 	        return _this;
@@ -10498,7 +10568,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }, {
 	        key: '_changeRotateForRange',
 	        value: function _changeRotateForRange(value) {
-	            var angle = (0, _util.toInteger)(value);
+	            var angle = toInteger(value);
 	            this._els.rotateRangeValue.value = angle;
 	            this.actions.setAngle(angle);
 	        }
@@ -10576,7 +10646,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _util = __webpack_require__(72);
 
+	var _util2 = _interopRequireDefault(_util);
+
 	var _consts = __webpack_require__(73);
+
+	var _consts2 = _interopRequireDefault(_consts);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10586,11 +10660,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	var toInteger = _util2.default.toInteger;
+	var defaultTextRangeValus = _consts2.default.defaultTextRangeValus;
+
 	/**
 	 * Crop ui class
 	 * @class
 	 * @ignore
 	 */
+
 	var Text = function (_Submenu) {
 	    _inherits(Text, _Submenu);
 
@@ -10617,7 +10695,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            textEffectButton: _this.selector('#tie-text-effect-button'),
 	            textAlignButton: _this.selector('#tie-text-align-button'),
 	            textColorpicker: new _colorpicker2.default(_this.selector('#tie-text-color'), '#ffbb3b', _this.toggleDirection),
-	            textRange: new _range2.default(_this.selector('#tie-text-range'), _consts.defaultTextRangeValus),
+	            textRange: new _range2.default(_this.selector('#tie-text-range'), defaultTextRangeValus),
 	            textRangeValue: _this.selector('#tie-text-range-value')
 	        };
 	        return _this;
@@ -10725,8 +10803,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }, {
 	        key: '_changeTextRnageHandler',
 	        value: function _changeTextRnageHandler(value) {
-	            value = (0, _util.toInteger)(value);
-	            if ((0, _util.toInteger)(this._els.textRangeValue.value) !== value) {
+	            value = toInteger(value);
+	            if (toInteger(this._els.textRangeValue.value) !== value) {
 	                this.actions.changeTextStyle({
 	                    fontSize: value
 	                });
@@ -10965,7 +11043,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _util = __webpack_require__(72);
 
+	var _util2 = _interopRequireDefault(_util);
+
 	var _consts = __webpack_require__(73);
+
+	var _consts2 = _interopRequireDefault(_consts);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10975,11 +11057,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	var isSupportFileApi = _util2.default.isSupportFileApi;
+	var defaultIconPath = _consts2.default.defaultIconPath;
+
 	/**
 	 * Icon ui class
 	 * @class
 	 * @ignore
 	 */
+
 	var Icon = function (_Submenu) {
 	    _inherits(Icon, _Submenu);
 
@@ -11046,7 +11132,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        value: function registDefaultIcon() {
 	            var _this2 = this;
 
-	            _tuiCodeSnippet2.default.forEach(_consts.defaultIconPath, function (path, type) {
+	            _tuiCodeSnippet2.default.forEach(defaultIconPath, function (path, type) {
 	                _this2.actions.registDefalutIcons(type, path);
 	            });
 	        }
@@ -11125,7 +11211,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        value: function _registeIconHandler(event) {
 	            var imgUrl = void 0;
 
-	            if (!_util.isSupportFileApi) {
+	            if (!isSupportFileApi) {
 	                alert('This browser does not support file-api');
 	            }
 
@@ -11196,6 +11282,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _consts = __webpack_require__(73);
 
+	var _consts2 = _interopRequireDefault(_consts);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -11203,6 +11291,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var defaultDrawRangeValus = _consts2.default.defaultDrawRangeValus;
 
 	var DRAW_OPACITY = 0.7;
 
@@ -11231,7 +11321,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        _this._els = {
 	            lineSelectButton: _this.selector('#tie-draw-line-select-button'),
 	            drawColorpicker: new _colorpicker2.default(_this.selector('#tie-draw-color'), '#00a9ff', _this.toggleDirection),
-	            drawRange: new _range2.default(_this.selector('#tie-draw-range'), _consts.defaultDrawRangeValus),
+	            drawRange: new _range2.default(_this.selector('#tie-draw-range'), defaultDrawRangeValus),
 	            drawRangeValue: _this.selector('#tie-draw-range-value')
 	        };
 
@@ -11419,7 +11509,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _util = __webpack_require__(72);
 
+	var _util2 = _interopRequireDefault(_util);
+
 	var _consts = __webpack_require__(73);
+
+	var _consts2 = _interopRequireDefault(_consts);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -11428,6 +11522,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var toInteger = _util2.default.toInteger,
+	    toCamelCase = _util2.default.toCamelCase;
+
+	var FILTER_RANGE = _consts2.default.defaultFilterRangeValus;
 
 	var PICKER_CONTROL_HEIGHT = '130px';
 	var BLEND_OPTIONS = ['add', 'diff', 'subtract', 'multiply', 'screen', 'lighten', 'darken'];
@@ -11483,7 +11582,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	            _tuiCodeSnippet2.default.forEach(FILTER_OPTIONS, function (filterName) {
 	                var filterCheckElement = _this2.selector('#tie-' + filterName);
-	                var filterNameCamelCase = (0, _util.toCamelCase)(filterName);
+	                var filterNameCamelCase = toCamelCase(filterName);
 	                _this2.checkedMap[filterNameCamelCase] = filterCheckElement;
 
 	                filterCheckElement.addEventListener('change', function () {
@@ -11546,24 +11645,24 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var option = {};
 	            switch (type) {
 	                case 'removeWhite':
-	                    option.threshold = (0, _util.toInteger)(this._els.removewhiteThresholdRange.value);
-	                    option.distance = (0, _util.toInteger)(this._els.removewhiteDistanceRange.value);
+	                    option.threshold = toInteger(this._els.removewhiteThresholdRange.value);
+	                    option.distance = toInteger(this._els.removewhiteDistanceRange.value);
 	                    break;
 	                case 'gradientTransparency':
-	                    option.threshold = (0, _util.toInteger)(this._els.gradientTransparencyRange.value);
+	                    option.threshold = toInteger(this._els.gradientTransparencyRange.value);
 	                    break;
 	                case 'colorFilter':
 	                    option.color = '#FFFFFF';
 	                    option.threshold = this._els.colorfilterThresholeRange.value;
 	                    break;
 	                case 'pixelate':
-	                    option.blocksize = (0, _util.toInteger)(this._els.pixelateRange.value);
+	                    option.blocksize = toInteger(this._els.pixelateRange.value);
 	                    break;
 	                case 'noise':
-	                    option.noise = (0, _util.toInteger)(this._els.noiseRange.value);
+	                    option.noise = toInteger(this._els.noiseRange.value);
 	                    break;
 	                case 'brightness':
-	                    option.brightness = (0, _util.toInteger)(this._els.brightnessRange.value);
+	                    option.brightness = toInteger(this._els.brightnessRange.value);
 	                    break;
 	                case 'blend':
 	                    option.color = this._els.filterBlendColor.color;
@@ -11594,13 +11693,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var selector = this.selector;
 
 	            this._els = {
-	                removewhiteThresholdRange: new _range2.default(selector('#tie-removewhite-threshold-range'), _consts.defaultFilterRangeValus.removewhiteThresholdRange),
-	                removewhiteDistanceRange: new _range2.default(selector('#tie-removewhite-distance-range'), _consts.defaultFilterRangeValus.removewhiteDistanceRange),
-	                gradientTransparencyRange: new _range2.default(selector('#tie-gradient-transparency-range'), _consts.defaultFilterRangeValus.gradientTransparencyRange),
-	                brightnessRange: new _range2.default(selector('#tie-brightness-range'), _consts.defaultFilterRangeValus.brightnessRange),
-	                noiseRange: new _range2.default(selector('#tie-noise-range'), _consts.defaultFilterRangeValus.noiseRange),
-	                pixelateRange: new _range2.default(selector('#tie-pixelate-range'), _consts.defaultFilterRangeValus.pixelateRange),
-	                colorfilterThresholeRange: new _range2.default(selector('#tie-colorfilter-threshole-range'), _consts.defaultFilterRangeValus.colorfilterThresholeRange),
+	                removewhiteThresholdRange: new _range2.default(selector('#tie-removewhite-threshold-range'), FILTER_RANGE.removewhiteThresholdRange),
+	                removewhiteDistanceRange: new _range2.default(selector('#tie-removewhite-distance-range'), FILTER_RANGE.removewhiteDistanceRange),
+	                gradientTransparencyRange: new _range2.default(selector('#tie-gradient-transparency-range'), FILTER_RANGE.gradientTransparencyRange),
+	                brightnessRange: new _range2.default(selector('#tie-brightness-range'), FILTER_RANGE.brightnessRange),
+	                noiseRange: new _range2.default(selector('#tie-noise-range'), FILTER_RANGE.noiseRange),
+	                pixelateRange: new _range2.default(selector('#tie-pixelate-range'), FILTER_RANGE.pixelateRange),
+	                colorfilterThresholeRange: new _range2.default(selector('#tie-colorfilter-threshole-range'), FILTER_RANGE.colorfilterThresholeRange),
 	                filterTintColor: new _colorpicker2.default(selector('#tie-filter-tint-color'), '#03bd9e', this.toggleDirection),
 	                filterMultiplyColor: new _colorpicker2.default(selector('#tie-filter-multiply-color'), '#515ce6', this.toggleDirection),
 	                filterBlendColor: new _colorpicker2.default(selector('#tie-filter-blend-color'), '#ffbb3b', this.toggleDirection)
@@ -11630,7 +11729,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            pickerControl.appendChild(rangeWrap);
 	            pickerControl.style.height = PICKER_CONTROL_HEIGHT;
 
-	            return new _range2.default(range, _consts.defaultFilterRangeValus.tintOpacityRange);
+	            return new _range2.default(range, FILTER_RANGE.tintOpacityRange);
 	        }
 
 	        /**
@@ -13415,6 +13514,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @fileoverview Graphics module
@@ -13430,8 +13533,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _promise2 = _interopRequireDefault(_promise);
 
 	var _fabric = __webpack_require__(105);
-
-	var _fabric2 = _interopRequireDefault(_fabric);
 
 	var _imageLoader = __webpack_require__(106);
 
@@ -14130,7 +14231,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var callback = this._callbackAfterLoadingImageObject.bind(this);
 
 	            return new _promise2.default(function (resolve) {
-	                _fabric2.default.Image.fromURL(imgUrl, function (image) {
+	                _fabric.fabric.Image.fromURL(imgUrl, function (image) {
 	                    callback(image);
 	                    resolve(_this2.createObjectProperties(image));
 	                }, {
@@ -14440,7 +14541,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                selectedElement.appendChild(canvasElement);
 	            }
 
-	            this._canvas = new _fabric2.default.Canvas(canvasElement, {
+	            this._canvas = new _fabric.fabric.Canvas(canvasElement, {
 	                containerClass: 'tui-image-editor-canvas-container',
 	                enableRetinaScaling: false
 	            });
@@ -14851,7 +14952,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}();
 
 	CustomEvents.mixin(Graphics);
-	module.exports = Graphics;
+	exports.default = Graphics;
 
 /***/ }),
 /* 105 */
@@ -14864,6 +14965,10 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -14989,13 +15094,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return ImageLoader;
 	}(_component2.default);
 
-	module.exports = ImageLoader;
+	exports.default = ImageLoader;
 
 /***/ }),
 /* 107 */
 /***/ (function(module, exports) {
 
 	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -15175,7 +15284,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return Component;
 	}();
 
-	module.exports = Component;
+	exports.default = Component;
 
 /***/ }),
 /* 108 */
@@ -15183,11 +15292,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _fabric = __webpack_require__(105);
-
-	var _fabric2 = _interopRequireDefault(_fabric);
 
 	var _component = __webpack_require__(107);
 
@@ -15199,7 +15310,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _consts = __webpack_require__(73);
 
+	var _consts2 = _interopRequireDefault(_consts);
+
 	var _util = __webpack_require__(72);
+
+	var _util2 = _interopRequireDefault(_util);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -15211,6 +15326,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @fileoverview Image crop module (start cropping, end cropping)
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+
+	var keyCodes = _consts2.default.keyCodes,
+	    componentNames = _consts2.default.componentNames;
+	var clamp = _util2.default.clamp;
 
 
 	var MOUSE_MOVE_THRESHOLD = 10;
@@ -15234,7 +15354,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	         * @type {Cropzone}
 	         * @private
 	         */
-	        var _this = _possibleConstructorReturn(this, (Cropper.__proto__ || Object.getPrototypeOf(Cropper)).call(this, _consts.componentNames.CROPPER, graphics));
+	        var _this = _possibleConstructorReturn(this, (Cropper.__proto__ || Object.getPrototypeOf(Cropper)).call(this, componentNames.CROPPER, graphics));
 
 	        _this._cropzone = null;
 
@@ -15313,8 +15433,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	            canvas.selection = false;
 	            canvas.defaultCursor = 'crosshair';
 
-	            _fabric2.default.util.addListener(document, 'keydown', this._listeners.keydown);
-	            _fabric2.default.util.addListener(document, 'keyup', this._listeners.keyup);
+	            _fabric.fabric.util.addListener(document, 'keydown', this._listeners.keydown);
+	            _fabric.fabric.util.addListener(document, 'keyup', this._listeners.keyup);
 	        }
 
 	        /**
@@ -15340,8 +15460,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	            this._cropzone = null;
 
-	            _fabric2.default.util.removeListener(document, 'keydown', this._listeners.keydown);
-	            _fabric2.default.util.removeListener(document, 'keyup', this._listeners.keyup);
+	            _fabric.fabric.util.removeListener(document, 'keydown', this._listeners.keydown);
+	            _fabric.fabric.util.removeListener(document, 'keyup', this._listeners.keyup);
 	        }
 
 	        /**
@@ -15411,10 +15531,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var canvasHeight = canvas.getHeight();
 	            var startX = this._startX;
 	            var startY = this._startY;
-	            var left = (0, _util.clamp)(x, 0, startX);
-	            var top = (0, _util.clamp)(y, 0, startY);
-	            var width = (0, _util.clamp)(x, startX, canvasWidth) - left; // (startX <= x(mouse) <= canvasWidth) - left
-	            var height = (0, _util.clamp)(y, startY, canvasHeight) - top; // (startY <= y(mouse) <= canvasHeight) - top
+	            var left = clamp(x, 0, startX);
+	            var top = clamp(y, 0, startY);
+	            var width = clamp(x, startX, canvasWidth) - left; // (startX <= x(mouse) <= canvasWidth) - left
+	            var height = clamp(y, startY, canvasHeight) - top; // (startY <= y(mouse) <= canvasHeight) - top
 
 	            if (this._withShiftKey) {
 	                // make fixed ratio cropzone
@@ -15526,7 +15646,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }, {
 	        key: '_onKeyDown',
 	        value: function _onKeyDown(e) {
-	            if (e.keyCode === _consts.keyCodes.SHIFT) {
+	            if (e.keyCode === keyCodes.SHIFT) {
 	                this._withShiftKey = true;
 	            }
 	        }
@@ -15540,7 +15660,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }, {
 	        key: '_onKeyUp',
 	        value: function _onKeyUp(e) {
-	            if (e.keyCode === _consts.keyCodes.SHIFT) {
+	            if (e.keyCode === keyCodes.SHIFT) {
 	                this._withShiftKey = false;
 	            }
 	        }
@@ -15549,7 +15669,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Cropper;
 	}(_component2.default);
 
-	module.exports = Cropper;
+	exports.default = Cropper;
 
 /***/ }),
 /* 109 */
@@ -15557,23 +15677,28 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
 	var _tuiCodeSnippet = __webpack_require__(3);
 
 	var _tuiCodeSnippet2 = _interopRequireDefault(_tuiCodeSnippet);
 
 	var _fabric = __webpack_require__(105);
 
-	var _fabric2 = _interopRequireDefault(_fabric);
-
 	var _util = __webpack_require__(72);
+
+	var _util2 = _interopRequireDefault(_util);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var CORNER_TYPE_TOP_LEFT = 'tl'; /**
-	                                  * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
-	                                  * @fileoverview Cropzone extending fabric.Rect
-	                                  */
+	var clamp = _util2.default.clamp; /**
+	                                   * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
+	                                   * @fileoverview Cropzone extending fabric.Rect
+	                                   */
 
+	var CORNER_TYPE_TOP_LEFT = 'tl';
 	var CORNER_TYPE_TOP_RIGHT = 'tr';
 	var CORNER_TYPE_MIDDLE_TOP = 'mt';
 	var CORNER_TYPE_MIDDLE_LEFT = 'ml';
@@ -15590,7 +15715,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @extends {fabric.Rect}
 	 * @ignore
 	 */
-	var Cropzone = _fabric2.default.util.createClass(_fabric2.default.Rect, /** @lends Cropzone.prototype */{
+	var Cropzone = _fabric.fabric.util.createClass(_fabric.fabric.Rect, /** @lends Cropzone.prototype */{
 	    /**
 	     * Constructor
 	     * @param {Object} options Options object
@@ -15847,8 +15972,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	            maxLeft = this.canvas.getWidth() - width,
 	            maxTop = this.canvas.getHeight() - height;
 
-	        this.setLeft((0, _util.clamp)(left, 0, maxLeft));
-	        this.setTop((0, _util.clamp)(top, 0, maxTop));
+	        this.setLeft(clamp(left, 0, maxLeft));
+	        this.setTop(clamp(top, 0, maxTop));
 	    },
 
 
@@ -15897,9 +16022,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    _calcTopLeftScalingSizeFromPointer: function _calcTopLeftScalingSizeFromPointer(x, y) {
 	        var bottom = this.getHeight() + this.top,
 	            right = this.getWidth() + this.left,
-	            top = (0, _util.clamp)(y, 0, bottom - 1),
+	            top = clamp(y, 0, bottom - 1),
 	            // 0 <= top <= (bottom - 1)
-	        left = (0, _util.clamp)(x, 0, right - 1); // 0 <= left <= (right - 1)
+	        left = clamp(x, 0, right - 1); // 0 <= left <= (right - 1)
 
 	        // When scaling "Top-Left corner": It fixes right and bottom coordinates
 	        return {
@@ -15928,8 +16053,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        // When scaling "Bottom-Right corner": It fixes left and top coordinates
 
 	        return {
-	            width: (0, _util.clamp)(x, left + 1, maxX) - left, // (width = x - left), (left + 1 <= x <= maxX)
-	            height: (0, _util.clamp)(y, top + 1, maxY) - top // (height = y - top), (top + 1 <= y <= maxY)
+	            width: clamp(x, left + 1, maxX) - left, // (width = x - left), (left + 1 <= x <= maxX)
+	            height: clamp(y, top + 1, maxY) - top // (height = y - top), (top + 1 <= y <= maxY)
 	        };
 	    },
 
@@ -16011,13 +16136,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	});
 
-	module.exports = Cropzone;
+	exports.default = Cropzone;
 
 /***/ }),
 /* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -16220,7 +16349,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Flip;
 	}(_component2.default);
 
-	module.exports = Flip;
+	exports.default = Flip;
 
 /***/ }),
 /* 111 */
@@ -16228,11 +16357,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _fabric = __webpack_require__(105);
-
-	var _fabric2 = _interopRequireDefault(_fabric);
 
 	var _promise = __webpack_require__(4);
 
@@ -16336,8 +16467,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	            canvas.forEachObject(function (obj) {
 	                var objCenter = obj.getCenterPoint();
-	                var radian = _fabric2.default.util.degreesToRadians(angleDiff);
-	                var newObjCenter = _fabric2.default.util.rotatePoint(objCenter, oldImageCenter, radian);
+	                var radian = _fabric.fabric.util.degreesToRadians(angleDiff);
+	                var newObjCenter = _fabric.fabric.util.rotatePoint(objCenter, oldImageCenter, radian);
 
 	                obj.set({
 	                    left: newObjCenter.x - centerDiff.x,
@@ -16367,7 +16498,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Rotation;
 	}(_component2.default);
 
-	module.exports = Rotation;
+	exports.default = Rotation;
 
 /***/ }),
 /* 112 */
@@ -16375,11 +16506,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _fabric = __webpack_require__(105);
-
-	var _fabric2 = _interopRequireDefault(_fabric);
 
 	var _component = __webpack_require__(107);
 
@@ -16426,7 +16559,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * fabric.Color instance for brush color
 	     * @type {fabric.Color}
 	     */
-	    _this.oColor = new _fabric2.default.Color('rgba(0, 0, 0, 0.5)');
+	    _this.oColor = new _fabric.fabric.Color('rgba(0, 0, 0, 0.5)');
 	    return _this;
 	  }
 
@@ -16458,7 +16591,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      setting = setting || {};
 	      this.width = setting.width || this.width;
 	      if (setting.color) {
-	        this.oColor = new _fabric2.default.Color(setting.color);
+	        this.oColor = new _fabric.fabric.Color(setting.color);
 	      }
 	      brush.width = this.width;
 	      brush.color = this.oColor.toRgba();
@@ -16480,7 +16613,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return FreeDrawing;
 	}(_component2.default);
 
-	module.exports = FreeDrawing;
+	exports.default = FreeDrawing;
 
 /***/ }),
 /* 113 */
@@ -16488,11 +16621,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _fabric = __webpack_require__(105);
-
-	var _fabric2 = _interopRequireDefault(_fabric);
 
 	var _component = __webpack_require__(107);
 
@@ -16544,7 +16679,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	         * @type {fabric.Color}
 	         * @private
 	         */
-	        _this._oColor = new _fabric2.default.Color('rgba(0, 0, 0, 0.5)');
+	        _this._oColor = new _fabric.fabric.Color('rgba(0, 0, 0, 0.5)');
 
 	        /**
 	         * Listeners
@@ -16600,7 +16735,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            this._width = setting.width || this._width;
 
 	            if (setting.color) {
-	                this._oColor = new _fabric2.default.Color(setting.color);
+	                this._oColor = new _fabric.fabric.Color(setting.color);
 	            }
 	            brush.width = this._width;
 	            brush.color = this._oColor.toRgba();
@@ -16640,7 +16775,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var pointer = canvas.getPointer(fEvent.e);
 	            var points = [pointer.x, pointer.y, pointer.x, pointer.y];
 
-	            this._line = new _fabric2.default.Line(points, {
+	            this._line = new _fabric.fabric.Line(points, {
 	                stroke: this._oColor.toRgba(),
 	                strokeWidth: this._width,
 	                evented: false
@@ -16704,7 +16839,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Line;
 	}(_component2.default);
 
-	module.exports = Line;
+	exports.default = Line;
 
 /***/ }),
 /* 114 */
@@ -16712,11 +16847,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _fabric = __webpack_require__(105);
-
-	var _fabric2 = _interopRequireDefault(_fabric);
 
 	var _tuiCodeSnippet = __webpack_require__(3);
 
@@ -16987,13 +17124,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	                }
 
 	                if (_this2.useItext) {
-	                    newText = new _fabric2.default.IText(text, styles);
+	                    newText = new _fabric.fabric.IText(text, styles);
 	                    selectionStyle = _tuiCodeSnippet2.default.extend({}, selectionStyle, {
 	                        originX: 'left',
 	                        originY: 'top'
 	                    });
 	                } else {
-	                    newText = new _fabric2.default.Text(text, styles);
+	                    newText = new _fabric.fabric.Text(text, styles);
 	                }
 
 	                newText.set(selectionStyle);
@@ -17180,12 +17317,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	            });
 
 	            if (browser.msie && browser.version === 9) {
-	                _fabric2.default.util.addListener(textarea, 'keydown', this._listeners.keydown);
+	                _fabric.fabric.util.addListener(textarea, 'keydown', this._listeners.keydown);
 	            } else {
-	                _fabric2.default.util.addListener(textarea, 'input', this._listeners.input);
+	                _fabric.fabric.util.addListener(textarea, 'input', this._listeners.input);
 	            }
-	            _fabric2.default.util.addListener(textarea, 'blur', this._listeners.blur);
-	            _fabric2.default.util.addListener(textarea, 'scroll', this._listeners.scroll);
+	            _fabric.fabric.util.addListener(textarea, 'blur', this._listeners.blur);
+	            _fabric.fabric.util.addListener(textarea, 'scroll', this._listeners.scroll);
 	        }
 
 	        /**
@@ -17204,12 +17341,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	            this._textarea = null;
 
 	            if (browser.msie && browser.version < 10) {
-	                _fabric2.default.util.removeListener(textarea, 'keydown', this._listeners.keydown);
+	                _fabric.fabric.util.removeListener(textarea, 'keydown', this._listeners.keydown);
 	            } else {
-	                _fabric2.default.util.removeListener(textarea, 'input', this._listeners.input);
+	                _fabric.fabric.util.removeListener(textarea, 'input', this._listeners.input);
 	            }
-	            _fabric2.default.util.removeListener(textarea, 'blur', this._listeners.blur);
-	            _fabric2.default.util.removeListener(textarea, 'scroll', this._listeners.scroll);
+	            _fabric.fabric.util.removeListener(textarea, 'blur', this._listeners.blur);
+	            _fabric.fabric.util.removeListener(textarea, 'scroll', this._listeners.scroll);
 	        }
 
 	        /**
@@ -17490,7 +17627,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Text;
 	}(_component2.default);
 
-	module.exports = Text;
+	exports.default = Text;
 
 /***/ }),
 /* 115 */
@@ -17498,11 +17635,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _fabric = __webpack_require__(105);
-
-	var _fabric2 = _interopRequireDefault(_fabric);
 
 	var _tuiCodeSnippet = __webpack_require__(3);
 
@@ -17691,20 +17830,24 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }, {
 	        key: '_createIcon',
 	        value: function _createIcon(path) {
-	            return new _fabric2.default.Path(path);
+	            return new _fabric.fabric.Path(path);
 	        }
 	    }]);
 
 	    return Icon;
 	}(_component2.default);
 
-	module.exports = Icon;
+	exports.default = Icon;
 
 /***/ }),
 /* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -17715,8 +17858,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _promise2 = _interopRequireDefault(_promise);
 
 	var _fabric = __webpack_require__(105);
-
-	var _fabric2 = _interopRequireDefault(_fabric);
 
 	var _component = __webpack_require__(107);
 
@@ -17757,7 +17898,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 	var rejectMessages = _consts2.default.rejectMessages;
-	var filters = _fabric2.default.Image.filters;
+	var filters = _fabric.fabric.Image.filters;
 
 	filters.Mask = _mask2.default;
 	// filters.Blur = Blur;
@@ -17943,7 +18084,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var filterObj = void 0;
 	            // capitalize first letter for matching with fabric image filter name
 	            var fabricType = this._getFabricFilterType(type);
-	            var ImageFilter = _fabric2.default.Image.filters[fabricType];
+	            var ImageFilter = _fabric.fabric.Image.filters[fabricType];
 	            if (ImageFilter) {
 	                filterObj = new ImageFilter(options);
 	                filterObj.options = options;
@@ -18019,7 +18160,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Filter;
 	}(_component2.default);
 
-	module.exports = Filter;
+	exports.default = Filter;
 
 /***/ }),
 /* 117 */
@@ -18027,11 +18168,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
 	var _fabric = __webpack_require__(105);
-
-	var _fabric2 = _interopRequireDefault(_fabric);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	/**
 	 * Mask object
@@ -18039,7 +18180,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @extends {fabric.Image.filters.Mask}
 	 * @ignore
 	 */
-	var Mask = _fabric2.default.util.createClass(_fabric2.default.Image.filters.Mask, /** @lends Mask.prototype */{
+	var Mask = _fabric.fabric.util.createClass(_fabric.fabric.Image.filters.Mask, /** @lends Mask.prototype */{
 	    /**
 	     * Apply filter to canvas element
 	     * @param {Object} canvasEl - Canvas element to apply filter
@@ -18073,7 +18214,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @private
 	     */
 	    _createCanvasOfMask: function _createCanvasOfMask(width, height) {
-	        var maskCanvasEl = _fabric2.default.util.createCanvasElement();
+	        var maskCanvasEl = _fabric.fabric.util.createCanvasElement();
 
 	        maskCanvasEl.width = width;
 	        maskCanvasEl.height = height;
@@ -18128,9 +18269,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
 	     * @fileoverview Mask extending fabric.Image.filters.Mask
 	     */
-
-
-	module.exports = Mask;
+	exports.default = Mask;
 
 /***/ }),
 /* 118 */
@@ -18138,11 +18277,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	var _fabric = __webpack_require__(105);
-
-	var _fabric2 = _interopRequireDefault(_fabric);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	/**
 	 * Sharpen object
@@ -18150,7 +18289,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @extends {fabric.Image.filters.Convolute}
 	 * @ignore
 	 */
-	var Sharpen = _fabric2.default.util.createClass(_fabric2.default.Image.filters.Convolute, /** @lends Convolute.prototype */{
+	var Sharpen = _fabric.fabric.util.createClass(_fabric.fabric.Image.filters.Convolute, /** @lends Convolute.prototype */{
 	  /**
 	   * Filter type
 	   * @param {String} type
@@ -18170,9 +18309,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
 	     * @fileoverview Sharpen extending fabric.Image.filters.Convolute
 	     */
-
-
-	module.exports = Sharpen;
+	exports.default = Sharpen;
 
 /***/ }),
 /* 119 */
@@ -18180,11 +18317,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	var _fabric = __webpack_require__(105);
-
-	var _fabric2 = _interopRequireDefault(_fabric);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	/**
 	 * Emboss object
@@ -18192,7 +18329,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @extends {fabric.Image.filters.Convolute}
 	 * @ignore
 	 */
-	var Emboss = _fabric2.default.util.createClass(_fabric2.default.Image.filters.Convolute, /** @lends Convolute.prototype */{
+	var Emboss = _fabric.fabric.util.createClass(_fabric.fabric.Image.filters.Convolute, /** @lends Convolute.prototype */{
 	  /**
 	   * Filter type
 	   * @param {String} type
@@ -18212,9 +18349,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
 	     * @fileoverview Emboss extending fabric.Image.filters.Convolute
 	     */
-
-
-	module.exports = Emboss;
+	exports.default = Emboss;
 
 /***/ }),
 /* 120 */
@@ -18222,11 +18357,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
 	var _fabric = __webpack_require__(105);
-
-	var _fabric2 = _interopRequireDefault(_fabric);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	/**
 	 * ColorFilter object
@@ -18234,7 +18369,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @extends {fabric.Image.filters.BaseFilter}
 	 * @ignore
 	 */
-	var ColorFilter = _fabric2.default.util.createClass(_fabric2.default.Image.filters.BaseFilter, /** @lends BaseFilter.prototype */{
+	var ColorFilter = _fabric.fabric.util.createClass(_fabric.fabric.Image.filters.BaseFilter, /** @lends BaseFilter.prototype */{
 	    /**
 	     * Filter type
 	     * @param {String} type
@@ -18272,7 +18407,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var data = imageData.data;
 	        var threshold = this.threshold;
 
-	        var filterColor = _fabric2.default.Color.sourceFromHex(this.color);
+	        var filterColor = _fabric.fabric.Color.sourceFromHex(this.color);
 	        var i = void 0,
 	            len = void 0;
 
@@ -18330,9 +18465,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
 	     * @fileoverview ColorFilter extending fabric.Image.filters.BaseFilter
 	     */
-
-
-	module.exports = ColorFilter;
+	exports.default = ColorFilter;
 
 /***/ }),
 /* 121 */
@@ -18340,11 +18473,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _fabric = __webpack_require__(105);
-
-	var _fabric2 = _interopRequireDefault(_fabric);
 
 	var _promise = __webpack_require__(4);
 
@@ -18492,8 +18627,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	                'mouse:down': this._handlers.mousedown
 	            });
 
-	            _fabric2.default.util.addListener(document, 'keydown', this._handlers.keydown);
-	            _fabric2.default.util.addListener(document, 'keyup', this._handlers.keyup);
+	            _fabric.fabric.util.addListener(document, 'keydown', this._handlers.keydown);
+	            _fabric.fabric.util.addListener(document, 'keyup', this._handlers.keyup);
 	        }
 
 	        /**
@@ -18516,8 +18651,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	                'mouse:down': this._handlers.mousedown
 	            });
 
-	            _fabric2.default.util.removeListener(document, 'keydown', this._handlers.keydown);
-	            _fabric2.default.util.removeListener(document, 'keyup', this._handlers.keyup);
+	            _fabric.fabric.util.removeListener(document, 'keydown', this._handlers.keydown);
+	            _fabric.fabric.util.removeListener(document, 'keyup', this._handlers.keyup);
 	        }
 
 	        /**
@@ -18624,15 +18759,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	            switch (type) {
 	                case 'rect':
-	                    instance = new _fabric2.default.Rect(options);
+	                    instance = new _fabric.fabric.Rect(options);
 	                    break;
 	                case 'circle':
-	                    instance = new _fabric2.default.Ellipse((0, _tuiCodeSnippet.extend)({
+	                    instance = new _fabric.fabric.Ellipse((0, _tuiCodeSnippet.extend)({
 	                        type: 'circle'
 	                    }, options));
 	                    break;
 	                case 'triangle':
-	                    instance = new _fabric2.default.Triangle(options);
+	                    instance = new _fabric.fabric.Triangle(options);
 	                    break;
 	                default:
 	                    instance = {};
@@ -18833,7 +18968,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Shape;
 	}(_component2.default);
 
-	module.exports = Shape;
+	exports.default = Shape;
 
 /***/ }),
 /* 122 */
@@ -18841,6 +18976,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 	/**
 	 * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
 	 * @fileoverview Shape resize helper
@@ -19030,7 +19168,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    shape.set(options);
 	}
 
-	module.exports = {
+	exports.default = {
 	    /**
 	     * Set each origin value to shape
 	     * @param {fabric.Object} shape - Shape object
@@ -19104,11 +19242,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _fabric = __webpack_require__(105);
-
-	var _fabric2 = _interopRequireDefault(_fabric);
 
 	var _promise = __webpack_require__(4);
 
@@ -19274,8 +19414,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	                'mouse:down': this._handlers.mousedown
 	            });
 
-	            _fabric2.default.util.addListener(document, 'keydown', this._handlers.keydown);
-	            _fabric2.default.util.addListener(document, 'keyup', this._handlers.keyup);
+	            _fabric.fabric.util.addListener(document, 'keydown', this._handlers.keydown);
+	            _fabric.fabric.util.addListener(document, 'keyup', this._handlers.keyup);
 	        }
 
 	        /**
@@ -19298,8 +19438,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	                'mouse:down': this._handlers.mousedown
 	            });
 
-	            _fabric2.default.util.removeListener(document, 'keydown', this._handlers.keydown);
-	            _fabric2.default.util.removeListener(document, 'keyup', this._handlers.keyup);
+	            _fabric.fabric.util.removeListener(document, 'keydown', this._handlers.keydown);
+	            _fabric.fabric.util.removeListener(document, 'keyup', this._handlers.keyup);
 	        }
 
 	        /**
@@ -19624,16 +19764,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	                var censoredImage = shapeObj.get('censoredImage');
 	                if (!censoredImage) {
 	                    var sourceImg = this.getCanvasImage();
-	                    censoredImage = _fabric2.default.util.object.clone(sourceImg);
+	                    censoredImage = _fabric.fabric.util.object.clone(sourceImg);
 	                    shapeObj.set('censoredImage', censoredImage);
 	                }
 	                var filter = void 0;
 	                if (options.filter === 'pixelate') {
-	                    filter = new _fabric2.default.Image.filters.Pixelate({
+	                    filter = new _fabric.fabric.Image.filters.Pixelate({
 	                        blocksize: 20
 	                    });
 	                } else if (options.filter === 'blur') {
-	                    filter = new _fabric2.default.Image.filters.Blur({
+	                    filter = new _fabric.fabric.Image.filters.Blur({
 	                        blur: 0.1
 	                    });
 	                }
@@ -19646,7 +19786,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Censor;
 	}(_component2.default);
 
-	module.exports = Censor;
+	exports.default = Censor;
 
 /***/ }),
 /* 124 */
@@ -19654,11 +19794,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
 	var _fabric = __webpack_require__(105);
-
-	var _fabric2 = _interopRequireDefault(_fabric);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	/**
 	 * CensorRect object
@@ -19666,7 +19806,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @extends {fabric.Rect}
 	 * @ignore
 	 */
-	var CensorRect = _fabric2.default.util.createClass(_fabric2.default.Rect, /** @lends Rect.prototype */{
+	var CensorRect = _fabric.fabric.util.createClass(_fabric.fabric.Rect, /** @lends Rect.prototype */{
 	    /**
 	     * type
 	     * @param {String} type
@@ -19731,9 +19871,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @author maxinminax <ng.nhuphu@gmail.com>
 	     * @fileoverview CensorRect extending fabric.Rect
 	     */
-
-
-	module.exports = CensorRect;
+	exports.default = CensorRect;
 
 /***/ }),
 /* 125 */
@@ -19741,11 +19879,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
 	var _fabric = __webpack_require__(105);
-
-	var _fabric2 = _interopRequireDefault(_fabric);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	/**
 	 * CensorCircle object
@@ -19753,7 +19891,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @extends {fabric.Rect}
 	 * @ignore
 	 */
-	var CensorCircle = _fabric2.default.util.createClass(_fabric2.default.Ellipse, /** @lends Rect.prototype */{
+	var CensorCircle = _fabric.fabric.util.createClass(_fabric.fabric.Ellipse, /** @lends Rect.prototype */{
 	    /**
 	     * type
 	     * @param {String} type
@@ -19823,9 +19961,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @author maxinminax <ng.nhuphu@gmail.com>
 	     * @fileoverview CensorCircle extending fabric.Rect
 	     */
-
-
-	module.exports = CensorCircle;
+	exports.default = CensorCircle;
 
 /***/ }),
 /* 126 */
@@ -19833,11 +19969,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
 	var _fabric = __webpack_require__(105);
-
-	var _fabric2 = _interopRequireDefault(_fabric);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	/**
 	 * CensorTriangle object
@@ -19845,7 +19981,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @extends {fabric.Rect}
 	 * @ignore
 	 */
-	var CensorTriangle = _fabric2.default.util.createClass(_fabric2.default.Triangle, /** @lends Rect.prototype */{
+	var CensorTriangle = _fabric.fabric.util.createClass(_fabric.fabric.Triangle, /** @lends Rect.prototype */{
 	    /**
 	     * type
 	     * @param {String} type
@@ -19915,9 +20051,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @author maxinminax <ng.nhuphu@gmail.com>
 	     * @fileoverview CensorTriangle extending fabric.Rect
 	     */
-
-
-	module.exports = CensorTriangle;
+	exports.default = CensorTriangle;
 
 /***/ }),
 /* 127 */
@@ -19925,6 +20059,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 	/**
 	 * @author maxinminax <ng.nhuphu@gmail.com>
 	 * @fileoverview CensorShape resize helper
@@ -20114,7 +20251,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    shape.set(options);
 	}
 
-	module.exports = {
+	exports.default = {
 	    /**
 	     * Set each origin value to shape
 	     * @param {fabric.Object} shape - Shape object
@@ -20188,6 +20325,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _drawingMode = __webpack_require__(129);
@@ -20260,13 +20401,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return CropperDrawingMode;
 	}(_drawingMode2.default);
 
-	module.exports = CropperDrawingMode;
+	exports.default = CropperDrawingMode;
 
 /***/ }),
 /* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
@@ -20342,13 +20487,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return DrawingMode;
 	}();
 
-	module.exports = DrawingMode;
+	exports.default = DrawingMode;
 
 /***/ }),
 /* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -20423,13 +20572,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return FreeDrawingMode;
 	}(_drawingMode2.default);
 
-	module.exports = FreeDrawingMode;
+	exports.default = FreeDrawingMode;
 
 /***/ }),
 /* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -20504,13 +20657,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return LineDrawingMode;
 	}(_drawingMode2.default);
 
-	module.exports = LineDrawingMode;
+	exports.default = LineDrawingMode;
 
 /***/ }),
 /* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -20584,13 +20741,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return ShapeDrawingMode;
 	}(_drawingMode2.default);
 
-	module.exports = ShapeDrawingMode;
+	exports.default = ShapeDrawingMode;
 
 /***/ }),
 /* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -20664,13 +20825,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return TextDrawingMode;
 	}(_drawingMode2.default);
 
-	module.exports = TextDrawingMode;
+	exports.default = TextDrawingMode;
 
 /***/ }),
 /* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -20744,7 +20909,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return CensorDrawingMode;
 	}(_drawingMode2.default);
 
-	module.exports = CensorDrawingMode;
+	exports.default = CensorDrawingMode;
 
 /***/ }),
 /* 135 */
@@ -20758,6 +20923,10 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _command = __webpack_require__(69);
 
@@ -20820,13 +20989,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	module.exports = command;
+	exports.default = command;
 
 /***/ }),
 /* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _command = __webpack_require__(69);
 
@@ -20879,13 +21052,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	module.exports = command;
+	exports.default = command;
 
 /***/ }),
 /* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _command = __webpack_require__(69);
 
@@ -20946,13 +21123,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	module.exports = command;
+	exports.default = command;
 
 /***/ }),
 /* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _command = __webpack_require__(69);
 
@@ -21022,13 +21203,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	module.exports = command;
+	exports.default = command;
 
 /***/ }),
 /* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _command = __webpack_require__(69);
 
@@ -21097,13 +21282,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	module.exports = command;
+	exports.default = command;
 
 /***/ }),
 /* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _command = __webpack_require__(69);
 
@@ -21166,13 +21355,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	module.exports = command;
+	exports.default = command;
 
 /***/ }),
 /* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _command = __webpack_require__(69);
 
@@ -21258,13 +21451,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	module.exports = command;
+	exports.default = command;
 
 /***/ }),
 /* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _command = __webpack_require__(69);
 
@@ -21337,13 +21534,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	module.exports = command;
+	exports.default = command;
 
 /***/ }),
 /* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _tuiCodeSnippet = __webpack_require__(3);
 
@@ -21429,13 +21630,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	module.exports = command;
+	exports.default = command;
 
 /***/ }),
 /* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _command = __webpack_require__(69);
 
@@ -21502,13 +21707,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	module.exports = command;
+	exports.default = command;
 
 /***/ }),
 /* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _tuiCodeSnippet = __webpack_require__(3);
 
@@ -21591,13 +21800,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	module.exports = command;
+	exports.default = command;
 
 /***/ }),
 /* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _tuiCodeSnippet = __webpack_require__(3);
 
@@ -21683,13 +21896,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	module.exports = command;
+	exports.default = command;
 
 /***/ }),
 /* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _command = __webpack_require__(69);
 
@@ -21741,13 +21958,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	module.exports = command;
+	exports.default = command;
 
 /***/ }),
 /* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 
 	var _command = __webpack_require__(69);
 
@@ -21798,13 +22019,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	module.exports = command;
+	exports.default = command;
 
 /***/ }),
 /* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _command = __webpack_require__(69);
 
@@ -21878,13 +22103,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	module.exports = command;
+	exports.default = command;
 
 /***/ }),
 /* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 
 	var _command = __webpack_require__(69);
 
@@ -21938,13 +22167,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	module.exports = command;
+	exports.default = command;
 
 /***/ }),
 /* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _command = __webpack_require__(69);
 
@@ -22001,13 +22234,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	module.exports = command;
+	exports.default = command;
 
 /***/ }),
 /* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _command = __webpack_require__(69);
 
@@ -22066,13 +22303,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	module.exports = command;
+	exports.default = command;
 
 /***/ }),
 /* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 
 	var _command = __webpack_require__(69);
 
@@ -22126,13 +22367,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	module.exports = command;
+	exports.default = command;
 
 /***/ }),
 /* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _tuiCodeSnippet = __webpack_require__(3);
 
@@ -22213,13 +22458,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	module.exports = command;
+	exports.default = command;
 
 /***/ }),
 /* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	var _command = __webpack_require__(69);
 
@@ -22290,7 +22539,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	module.exports = command;
+	exports.default = command;
 
 /***/ })
 /******/ ])

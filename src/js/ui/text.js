@@ -2,8 +2,11 @@ import Range from './tools/range';
 import Colorpicker from './tools/colorpicker';
 import Submenu from './submenuBase';
 import templateHtml from './template/submenu/text';
-import {toInteger} from '../util';
-import {defaultTextRangeValus} from '../consts';
+import util from '../util';
+import consts from '../consts';
+
+const {toInteger} = util;
+const {defaultTextRangeValus} = consts;
 
 /**
  * Crop ui class

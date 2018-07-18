@@ -46,4 +46,4 @@ const command = {
 
 commandFactory.register(command);
 
-module.exports = command;
+export default command;

@@ -3,8 +3,11 @@ import Colorpicker from './tools/colorpicker';
 import Range from './tools/range';
 import Submenu from './submenuBase';
 import templateHtml from './template/submenu/filter';
-import {toInteger, toCamelCase} from '../util';
-import {defaultFilterRangeValus as FILTER_RANGE} from '../consts';
+import util from '../util';
+import consts from '../consts';
+
+const {toInteger, toCamelCase} = util;
+const FILTER_RANGE = consts.defaultFilterRangeValus;
 
 const PICKER_CONTROL_HEIGHT = '130px';
 const BLEND_OPTIONS = ['add', 'diff', 'subtract', 'multiply', 'screen', 'lighten', 'darken'];

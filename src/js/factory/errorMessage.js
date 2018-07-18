@@ -3,7 +3,9 @@
  * @fileoverview Error-message factory
  */
 import snippet from 'tui-code-snippet';
-import {keyMirror} from '../util';
+import util from '../util';
+
+const {keyMirror} = util;
 
 const types = keyMirror(
     'UN_IMPLEMENTATION',
@@ -22,7 +24,7 @@ const map = {
     }
 };
 
-module.exports = {
+export default {
     types: snippet.extend({}, types),
 
     create(type, ...args) {

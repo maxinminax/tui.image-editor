@@ -10,12 +10,13 @@ import action from './action';
 import commandFactory from './factory/command';
 import Graphics from './graphics';
 import consts from './consts';
-import {sendHostName} from './util';
+import util from '../util';
 
 const events = consts.eventNames;
 const commands = consts.commandNames;
 const {keyCodes, rejectMessages} = consts;
 const {isUndefined, forEach, CustomEvents} = snippet;
+const {sendHostName} = util;
 
 /**
  * Image editor
@@ -1488,4 +1489,4 @@ class ImageEditor {
 action.mixin(ImageEditor);
 CustomEvents.mixin(ImageEditor);
 
-module.exports = ImageEditor;
+export default ImageEditor;

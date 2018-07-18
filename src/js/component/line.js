@@ -168,4 +168,4 @@ class Line extends Component {
     }
 }
 
-module.exports = Line;
+export default Line;

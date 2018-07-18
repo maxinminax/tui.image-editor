@@ -40,4 +40,4 @@ class FreeDrawingMode extends DrawingMode {
     }
 }
 
-module.exports = FreeDrawingMode;
+export default FreeDrawingMode;

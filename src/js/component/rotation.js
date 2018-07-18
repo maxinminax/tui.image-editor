@@ -95,4 +95,4 @@ class Rotation extends Component {
     }
 }
 
-module.exports = Rotation;
+export default Rotation;

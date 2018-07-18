@@ -5,8 +5,11 @@
 import fabric from 'fabric';
 import Component from '../interface/component';
 import Cropzone from '../extension/cropzone';
-import {keyCodes, componentNames} from '../consts';
-import {clamp} from '../util';
+import consts from '../consts';
+import util from '../util';
+
+const {keyCodes, componentNames} = consts;
+const {clamp} = util;
 
 const MOUSE_MOVE_THRESHOLD = 10;
 
@@ -300,4 +303,4 @@ class Cropper extends Component {
     }
 }
 
-module.exports = Cropper;
+export default Cropper;

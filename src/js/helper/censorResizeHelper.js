@@ -179,7 +179,7 @@ function adjustDimensionOnMouseMove(pointer, shape) {
     shape.set(options);
 }
 
-module.exports = {
+export default {
     /**
      * Set each origin value to shape
      * @param {fabric.Object} shape - Shape object

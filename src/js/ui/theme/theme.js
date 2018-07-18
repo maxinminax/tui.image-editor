@@ -1,7 +1,9 @@
 import {extend, forEach} from 'tui-code-snippet';
-import {styleLoad} from '../../util';
+import util from '../../util';
 import style from '../template/style';
 import standardTheme from './standard';
+
+const {styleLoad} = util;
 
 /**
  * Theme manager

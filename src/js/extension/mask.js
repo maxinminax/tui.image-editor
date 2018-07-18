@@ -90,4 +90,4 @@ const Mask = fabric.util.createClass(fabric.Image.filters.Mask, /** @lends Mask.
     }
 });
 
-module.exports = Mask;
+export default Mask;

@@ -10,15 +10,9 @@ import CensorCircle from '../extension/censorCircle';
 import CensorTriangle from '../extension/censorTriangle';
 import consts from '../consts';
 import resizeHelper from '../helper/censorResizeHelper';
-import {
-    extend,
-    inArray
-} from 'tui-code-snippet';
+import {extend, inArray} from 'tui-code-snippet';
 
-const {
-    rejectMessages,
-    eventNames
-} = consts;
+const {rejectMessages, eventNames} = consts;
 const KEY_CODES = consts.keyCodes;
 
 const DEFAULT_TYPE = 'rect';
@@ -452,4 +446,4 @@ class Censor extends Component {
     }
 }
 
-module.exports = Censor;
+export default Censor;

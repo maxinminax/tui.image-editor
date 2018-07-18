@@ -74,4 +74,4 @@ const CensorRect = fabric.util.createClass(fabric.Rect, /** @lends Rect.prototyp
     }
 });
 
-module.exports = CensorRect;
+export default CensorRect;

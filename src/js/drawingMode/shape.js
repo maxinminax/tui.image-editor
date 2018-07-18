@@ -39,4 +39,4 @@ class ShapeDrawingMode extends DrawingMode {
     }
 }
 
-module.exports = ShapeDrawingMode;
+export default ShapeDrawingMode;

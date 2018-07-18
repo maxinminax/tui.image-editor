@@ -1,6 +1,8 @@
 import snippet from 'tui-code-snippet';
-import {toInteger} from '../../util';
+import util from '../../util';
 import tuiColorPicker from 'tui-color-picker';
+
+const {toInteger} = util;
 const PICKER_COLOR = [
     '#000000',
     '#2a2a2a',

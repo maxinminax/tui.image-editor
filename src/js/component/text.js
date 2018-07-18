@@ -652,4 +652,4 @@ class Text extends Component {
     }
 }
 
-module.exports = Text;
+export default Text;

@@ -3,7 +3,9 @@ import Colorpicker from './tools/colorpicker';
 import Range from './tools/range';
 import Submenu from './submenuBase';
 import templateHtml from './template/submenu/draw';
-import {defaultDrawRangeValus} from '../consts';
+import consts from '../consts';
+
+const {defaultDrawRangeValus} = consts;
 const DRAW_OPACITY = 0.7;
 
 /**

@@ -4,7 +4,9 @@
  */
 import snippet from 'tui-code-snippet';
 import fabric from 'fabric';
-import {clamp} from '../util';
+import util from '../util';
+
+const {clamp} = util;
 
 const CORNER_TYPE_TOP_LEFT = 'tl';
 const CORNER_TYPE_TOP_RIGHT = 'tr';
@@ -424,4 +426,4 @@ const Cropzone = fabric.util.createClass(fabric.Rect, /** @lends Cropzone.protot
     }
 });
 
-module.exports = Cropzone;
+export default Cropzone;

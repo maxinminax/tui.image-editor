@@ -1,5 +1,7 @@
 import snippet from 'tui-code-snippet';
-import {toInteger} from '../../util';
+import util from '../../util';
+
+const {toInteger} = util;
 
 /**
  * Range control class

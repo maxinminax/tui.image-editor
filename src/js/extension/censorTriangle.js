@@ -79,4 +79,4 @@ const CensorTriangle = fabric.util.createClass(fabric.Triangle, /** @lends Rect.
     }
 });
 
-module.exports = CensorTriangle;
+export default CensorTriangle;

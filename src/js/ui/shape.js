@@ -2,8 +2,11 @@ import Colorpicker from './tools/colorpicker';
 import Range from './tools/range';
 import Submenu from './submenuBase';
 import templateHtml from './template/submenu/shape';
-import {toInteger} from '../util';
-import {defaultShapeStrokeValus} from '../consts';
+import util from '../util';
+import consts from '../consts';
+
+const {toInteger} = util;
+const {defaultShapeStrokeValus} = consts;
 
 const SHAPE_DEFAULT_OPTION = {
     stroke: '#ffbb3b',

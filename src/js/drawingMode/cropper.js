@@ -39,4 +39,4 @@ class CropperDrawingMode extends DrawingMode {
     }
 }
 
-module.exports = CropperDrawingMode;
+export default CropperDrawingMode;

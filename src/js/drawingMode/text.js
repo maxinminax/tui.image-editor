@@ -39,4 +39,4 @@ class TextDrawingMode extends DrawingMode {
     }
 }
 
-module.exports = TextDrawingMode;
+export default TextDrawingMode;

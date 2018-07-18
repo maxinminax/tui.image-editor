@@ -190,4 +190,4 @@ class Shape extends Submenu {
     }
 }
 
-export default Shape;
+module.exports = Shape;

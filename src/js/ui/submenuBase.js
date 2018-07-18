@@ -63,4 +63,4 @@ class Submenu {
     }
 }
 
-export default Submenu;
+module.exports = Submenu;

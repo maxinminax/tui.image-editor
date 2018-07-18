@@ -32,4 +32,4 @@ const Emboss = fabric.util.createClass(fabric.Image.filters.Convolute, /** @lend
     }
 });
 
-export default Emboss;
+module.exports = Emboss;

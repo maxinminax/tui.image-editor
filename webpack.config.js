@@ -41,7 +41,7 @@ module.exports = {
             'commonjs': 'fabric',
             'commonjs2': 'fabric',
             'amd': 'fabric',
-            'root': ['fabric']
+            'root': ['window']
         }
     },
     module: {

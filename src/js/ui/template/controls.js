@@ -1,4 +1,4 @@
-export default ({biImage, iconStyle: {normal, active}, loadButtonStyle, downloadButtonStyle}) => (`
+module.exports = ({biImage, iconStyle: {normal, active}, loadButtonStyle, downloadButtonStyle}) => (`
     <div class="tui-image-editor-controls">
         <div class="tui-image-editor-controls-logo">
             <img src="${biImage}" />

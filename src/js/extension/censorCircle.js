@@ -79,4 +79,4 @@ const CensorCircle = fabric.util.createClass(fabric.Ellipse, /** @lends Rect.pro
     }
 });
 
-export default CensorCircle;
+module.exports = CensorCircle;

@@ -1131,4 +1131,4 @@ class Graphics {
 }
 
 CustomEvents.mixin(Graphics);
-export default Graphics;
+module.exports = Graphics;

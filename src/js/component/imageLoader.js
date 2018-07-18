@@ -82,4 +82,4 @@ class ImageLoader extends Component {
     }
 }
 
-export default ImageLoader;
+module.exports = ImageLoader;

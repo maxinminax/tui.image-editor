@@ -446,4 +446,4 @@ class Censor extends Component {
     }
 }
 
-export default Censor;
+module.exports = Censor;

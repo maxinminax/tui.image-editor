@@ -74,4 +74,4 @@ class Rotate extends Submenu {
     }
 }
 
-export default Rotate;
+module.exports = Rotate;

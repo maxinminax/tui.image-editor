@@ -166,4 +166,4 @@ class Colorpicker {
 }
 
 snippet.CustomEvents.mixin(Colorpicker);
-export default Colorpicker;
+module.exports = Colorpicker;

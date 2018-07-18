@@ -426,4 +426,4 @@ const Cropzone = fabric.util.createClass(fabric.Rect, /** @lends Cropzone.protot
     }
 });
 
-export default Cropzone;
+module.exports = Cropzone;

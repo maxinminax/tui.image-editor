@@ -6,7 +6,7 @@ import {forEach, imagePing} from 'tui-code-snippet';
 const {min, max} = Math;
 let hostnameSent = false;
 
-export default {
+module.exports = {
     /**
      * Clamp value
      * @param {number} value - Value

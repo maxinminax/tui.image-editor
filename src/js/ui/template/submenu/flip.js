@@ -1,4 +1,4 @@
-export default ({iconStyle: {normal, active}}) => (`
+module.exports = ({iconStyle: {normal, active}}) => (`
     <ul id="tie-flip-button" class="tui-image-editor-submenu-item">
         <li>
             <div class="tui-image-editor-button flipX">

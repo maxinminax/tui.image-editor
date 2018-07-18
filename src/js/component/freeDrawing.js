@@ -67,4 +67,4 @@ class FreeDrawing extends Component {
     }
 }
 
-export default FreeDrawing;
+module.exports = FreeDrawing;

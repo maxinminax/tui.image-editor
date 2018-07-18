@@ -1,4 +1,4 @@
-export default ({iconStyle: {normal, active}}) => (`
+module.exports = ({iconStyle: {normal, active}}) => (`
     <ul class="tui-image-editor-submenu-item">
         <li id="tie-draw-line-select-button">
             <div class="tui-image-editor-button free">

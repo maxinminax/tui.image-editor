@@ -157,4 +157,4 @@ class Text extends Submenu {
     }
 }
 
-export default Text;
+module.exports = Text;

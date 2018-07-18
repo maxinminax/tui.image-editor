@@ -39,4 +39,4 @@ class CensorDrawingMode extends DrawingMode {
     }
 }
 
-export default CensorDrawingMode;
+module.exports = CensorDrawingMode;

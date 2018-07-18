@@ -303,4 +303,4 @@ class Cropper extends Component {
     }
 }
 
-export default Cropper;
+module.exports = Cropper;

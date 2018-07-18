@@ -275,4 +275,4 @@ class Invoker {
 }
 
 CustomEvents.mixin(Invoker);
-export default Invoker;
+module.exports = Invoker;

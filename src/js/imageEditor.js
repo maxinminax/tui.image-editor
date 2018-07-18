@@ -1489,4 +1489,4 @@ class ImageEditor {
 action.mixin(ImageEditor);
 CustomEvents.mixin(ImageEditor);
 
-export default ImageEditor;
+module.exports = ImageEditor;

@@ -4,7 +4,7 @@
  */
 import util from './util';
 
-export default {
+module.exports = {
     /**
      * Component names
      * @type {Object.<string, string>}

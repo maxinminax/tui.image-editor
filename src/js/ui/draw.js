@@ -134,4 +134,4 @@ class Draw extends Submenu {
     }
 }
 
-export default Draw;
+module.exports = Draw;

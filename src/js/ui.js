@@ -551,4 +551,4 @@ class Ui {
     }
 }
 
-export default Ui;
+module.exports = Ui;

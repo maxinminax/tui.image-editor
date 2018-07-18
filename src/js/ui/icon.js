@@ -136,4 +136,4 @@ class Icon extends Submenu {
     }
 }
 
-export default Icon;
+module.exports = Icon;

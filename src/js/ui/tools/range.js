@@ -170,4 +170,4 @@ class Range {
 }
 
 snippet.CustomEvents.mixin(Range);
-export default Range;
+module.exports = Range;

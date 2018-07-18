@@ -40,4 +40,4 @@ class LineDrawingMode extends DrawingMode {
     }
 }
 
-export default LineDrawingMode;
+module.exports = LineDrawingMode;

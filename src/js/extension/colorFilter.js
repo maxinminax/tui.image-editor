@@ -98,4 +98,4 @@ const ColorFilter = fabric.util.createClass(fabric.Image.filters.BaseFilter, /**
     }
 });
 
-export default ColorFilter;
+module.exports = ColorFilter;

@@ -48,4 +48,4 @@ class DrawingMode {
     }
 }
 
-export default DrawingMode;
+module.exports = DrawingMode;

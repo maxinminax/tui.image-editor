@@ -1,4 +1,4 @@
-export default () => (`
+module.exports = () => (`
     <ul class="tui-image-editor-submenu-item">
         <li class="tui-image-editor-submenu-align">
             <div class="tui-image-editor-checkbox-wrap fixed-width">

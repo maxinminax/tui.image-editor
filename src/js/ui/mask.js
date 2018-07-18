@@ -65,4 +65,4 @@ class Mask extends Submenu {
     }
 }
 
-export default Mask;
+module.exports = Mask;

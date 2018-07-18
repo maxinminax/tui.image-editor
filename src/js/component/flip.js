@@ -146,4 +146,4 @@ class Flip extends Component {
     }
 }
 
-export default Flip;
+module.exports = Flip;

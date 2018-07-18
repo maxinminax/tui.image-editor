@@ -63,4 +63,4 @@ class Flip extends Submenu {
     }
 }
 
-export default Flip;
+module.exports = Flip;

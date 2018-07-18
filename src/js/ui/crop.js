@@ -68,4 +68,4 @@ class Crop extends Submenu {
     }
 }
 
-export default Crop;
+module.exports = Crop;

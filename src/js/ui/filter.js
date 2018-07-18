@@ -231,4 +231,4 @@ class Filter extends Submenu {
     }
 }
 
-export default Filter;
+module.exports = Filter;

@@ -12,7 +12,7 @@
 	else if(typeof exports === 'object')
 		exports["ImageEditor"] = factory(require("tui-code-snippet"), require("fabric"));
 	else
-		root["tui"] = root["tui"] || {}, root["tui"]["ImageEditor"] = factory((root["tui"] && root["tui"]["util"]), root["fabric"]);
+		root["tui"] = root["tui"] || {}, root["tui"]["ImageEditor"] = factory((root["tui"] && root["tui"]["util"]), root["window"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_105__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -61,10 +61,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
 
 	__webpack_require__(1);
 
@@ -118,7 +114,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	exports.default = _imageEditor2.default;
+	module.exports = _imageEditor2.default;
 
 	// commands
 
@@ -594,10 +590,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
@@ -2370,7 +2362,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	_action2.default.mixin(ImageEditor);
 	CustomEvents.mixin(ImageEditor);
 
-	exports.default = ImageEditor;
+	module.exports = ImageEditor;
 
 /***/ }),
 /* 3 */
@@ -3835,10 +3827,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @fileoverview Invoker - invoke commands
@@ -4198,17 +4186,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	}();
 
 	CustomEvents.mixin(Invoker);
-	exports.default = Invoker;
+	module.exports = Invoker;
 
 /***/ }),
 /* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _command = __webpack_require__(70);
 
@@ -4254,7 +4238,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    commands[command.name] = command;
 	}
 
-	exports.default = {
+	module.exports = {
 	    create: create,
 	    register: register
 	};
@@ -4264,10 +4248,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
@@ -4399,17 +4379,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return Command;
 	}();
 
-	exports.default = Command;
+	module.exports = Command;
 
 /***/ }),
 /* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _tuiCodeSnippet = __webpack_require__(3);
 
@@ -4442,7 +4418,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	};
 
-	exports.default = {
+	module.exports = {
 	    types: _tuiCodeSnippet2.default.extend({}, types),
 
 	    create: function create(type) {
@@ -4463,10 +4439,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
 	var _tuiCodeSnippet = __webpack_require__(3);
 
 	var min = Math.min,
@@ -4477,7 +4449,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var hostnameSent = false;
 
-	exports.default = {
+	module.exports = {
 	    /**
 	     * Clamp value
 	     * @param {number} value - Value
@@ -4699,17 +4671,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
 	var _util = __webpack_require__(72);
 
 	var _util2 = _interopRequireDefault(_util);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	exports.default = {
+	module.exports = {
 	    /**
 	     * Component names
 	     * @type {Object.<string, string>}
@@ -4917,10 +4885,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -5630,7 +5594,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Ui;
 	}();
 
-	exports.default = Ui;
+	module.exports = Ui;
 
 /***/ }),
 /* 75 */
@@ -5638,11 +5602,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	exports.default = function (_ref) {
+	module.exports = function (_ref) {
 	    var biImage = _ref.biImage,
 	        commonStyle = _ref.commonStyle,
 	        headerStyle = _ref.headerStyle,
@@ -5658,11 +5618,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	exports.default = function (_ref) {
+	module.exports = function (_ref) {
 	    var biImage = _ref.biImage,
 	        _ref$iconStyle = _ref.iconStyle,
 	        normal = _ref$iconStyle.normal,
@@ -5677,10 +5633,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -5870,7 +5822,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Theme;
 	}();
 
-	exports.default = Theme;
+	module.exports = Theme;
 
 /***/ }),
 /* 78 */
@@ -5878,11 +5830,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	exports.default = function (_ref) {
+	module.exports = function (_ref) {
 	    var subMenuLabelActive = _ref.subMenuLabelActive,
 	        subMenuLabelNormal = _ref.subMenuLabelNormal,
 	        subMenuRangeTitle = _ref.subMenuRangeTitle,
@@ -5907,9 +5855,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
 	/**
 	 * @fileoverview The standard theme
 	 * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
@@ -6045,7 +5990,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    'colorpicker.title.color': '#fff'
 	};
 	 */
-	exports.default = {
+	module.exports = {
 	  'common.bi.image': 'https://uicdn.toast.com/toastui/img/tui-image-editor-bi.png',
 	  'common.bisize.width': '251px',
 	  'common.bisize.height': '21px',
@@ -6124,10 +6069,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -6400,17 +6341,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Shape;
 	}(_submenuBase2.default);
 
-	exports.default = Shape;
+	module.exports = Shape;
 
 /***/ }),
 /* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -6609,7 +6546,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}();
 
 	_tuiCodeSnippet2.default.CustomEvents.mixin(Colorpicker);
-	exports.default = Colorpicker;
+	module.exports = Colorpicker;
 
 /***/ }),
 /* 82 */
@@ -9835,10 +9772,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _tuiCodeSnippet = __webpack_require__(3);
@@ -10059,17 +9992,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	}();
 
 	_tuiCodeSnippet2.default.CustomEvents.mixin(Range);
-	exports.default = Range;
+	module.exports = Range;
 
 /***/ }),
 /* 84 */
 /***/ (function(module, exports) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -10172,7 +10101,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return Submenu;
 	}();
 
-	exports.default = Submenu;
+	module.exports = Submenu;
 
 /***/ }),
 /* 85 */
@@ -10180,11 +10109,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	exports.default = function (_ref) {
+	module.exports = function (_ref) {
 	    var _ref$iconStyle = _ref.iconStyle,
 	        normal = _ref$iconStyle.normal,
 	        active = _ref$iconStyle.active;
@@ -10196,10 +10121,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -10312,7 +10233,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Crop;
 	}(_submenuBase2.default);
 
-	exports.default = Crop;
+	module.exports = Crop;
 
 /***/ }),
 /* 87 */
@@ -10320,11 +10241,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	exports.default = function (_ref) {
+	module.exports = function (_ref) {
 	    var _ref$iconStyle = _ref.iconStyle,
 	        normal = _ref$iconStyle.normal,
 	        active = _ref$iconStyle.active;
@@ -10336,10 +10253,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -10445,7 +10358,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Flip;
 	}(_submenuBase2.default);
 
-	exports.default = Flip;
+	module.exports = Flip;
 
 /***/ }),
 /* 89 */
@@ -10453,11 +10366,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	exports.default = function (_ref) {
+	module.exports = function (_ref) {
 	    var _ref$iconStyle = _ref.iconStyle,
 	        normal = _ref$iconStyle.normal,
 	        active = _ref$iconStyle.active;
@@ -10469,10 +10378,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -10597,7 +10502,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Rotate;
 	}(_submenuBase2.default);
 
-	exports.default = Rotate;
+	module.exports = Rotate;
 
 /***/ }),
 /* 91 */
@@ -10605,11 +10510,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	exports.default = function (_ref) {
+	module.exports = function (_ref) {
 	    var _ref$iconStyle = _ref.iconStyle,
 	        normal = _ref$iconStyle.normal,
 	        active = _ref$iconStyle.active;
@@ -10621,10 +10522,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -10857,7 +10754,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Text;
 	}(_submenuBase2.default);
 
-	exports.default = Text;
+	module.exports = Text;
 
 /***/ }),
 /* 93 */
@@ -10865,11 +10762,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	exports.default = function (_ref) {
+	module.exports = function (_ref) {
 	    var _ref$iconStyle = _ref.iconStyle,
 	        normal = _ref$iconStyle.normal,
 	        active = _ref$iconStyle.active;
@@ -10881,10 +10774,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -10994,7 +10883,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Mask;
 	}(_submenuBase2.default);
 
-	exports.default = Mask;
+	module.exports = Mask;
 
 /***/ }),
 /* 95 */
@@ -11002,11 +10891,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	exports.default = function (_ref) {
+	module.exports = function (_ref) {
 	    var _ref$iconStyle = _ref.iconStyle,
 	        normal = _ref$iconStyle.normal,
 	        active = _ref$iconStyle.active;
@@ -11018,10 +10903,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -11229,7 +11110,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Icon;
 	}(_submenuBase2.default);
 
-	exports.default = Icon;
+	module.exports = Icon;
 
 /***/ }),
 /* 97 */
@@ -11237,11 +11118,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	exports.default = function (_ref) {
+	module.exports = function (_ref) {
 	    var _ref$iconStyle = _ref.iconStyle,
 	        normal = _ref$iconStyle.normal,
 	        active = _ref$iconStyle.active;
@@ -11253,10 +11130,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -11456,7 +11329,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Draw;
 	}(_submenuBase2.default);
 
-	exports.default = Draw;
+	module.exports = Draw;
 
 /***/ }),
 /* 99 */
@@ -11464,11 +11337,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	exports.default = function (_ref) {
+	module.exports = function (_ref) {
 	    var _ref$iconStyle = _ref.iconStyle,
 	        normal = _ref$iconStyle.normal,
 	        active = _ref$iconStyle.active;
@@ -11480,10 +11349,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -11779,7 +11644,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Filter;
 	}(_submenuBase2.default);
 
-	exports.default = Filter;
+	module.exports = Filter;
 
 /***/ }),
 /* 101 */
@@ -11787,11 +11652,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	exports.default = function () {
+	module.exports = function () {
 	    return "\n    <ul class=\"tui-image-editor-submenu-item\">\n        <li class=\"tui-image-editor-submenu-align\">\n            <div class=\"tui-image-editor-checkbox-wrap fixed-width\">\n                <div class=\"tui-image-editor-checkbox\">\n                    <input type=\"checkbox\" id=\"tie-grayscale\">\n                    <label for=\"tie-grayscale\">Grayscale</label>\n                </div>\n                <div class=\"tui-image-editor-checkbox\">\n                    <input type=\"checkbox\" id=\"tie-invert\">\n                    <label for=\"tie-invert\">Invert</label>\n                </div>\n                <div class=\"tui-image-editor-checkbox\">\n                    <input type=\"checkbox\" id=\"tie-sepia\">\n                    <label for=\"tie-sepia\">Sepia</label>\n                </div>\n                <div class=\"tui-image-editor-checkbox\">\n                    <input type=\"checkbox\" id=\"tie-sepia2\">\n                    <label for=\"tie-sepia2\">Sepia2</label>\n                </div>\n                <div class=\"tui-image-editor-checkbox\">\n                    <input type=\"checkbox\" id=\"tie-blur\">\n                    <label for=\"tie-blur\">Blur</label>\n                </div>\n                <div class=\"tui-image-editor-checkbox\">\n                    <input type=\"checkbox\" id=\"tie-sharpen\">\n                    <label for=\"tie-sharpen\">Sharpen</label>\n                </div>\n                <div class=\"tui-image-editor-checkbox\">\n                    <input type=\"checkbox\" id=\"tie-emboss\">\n                    <label for=\"tie-emboss\">Emboss</label>\n                </div>\n            </div>\n        </li>\n        <li class=\"tui-image-editor-partition\">\n            <div></div>\n        </li>\n        <li class=\"tui-image-editor-submenu-align\">\n            <div>\n                <div class=\"tui-image-editor-checkbox-wrap\">\n                    <div class=\"tui-image-editor-checkbox\">\n                        <input type=\"checkbox\" id=\"tie-remove-white\">\n                        <label for=\"tie-remove-white\">Remove White</label>\n                    </div>\n                </div>\n                <div class=\"tui-image-editor-newline tui-image-editor-range-wrap short\">\n                    <label>Threshold</label>\n                    <div id=\"tie-removewhite-threshold-range\"></div>\n                </div>\n                <div class=\"tui-image-editor-newline tui-image-editor-range-wrap short\">\n                    <label>Distance</label>\n                    <div id=\"tie-removewhite-distance-range\"></div>\n                </div>\n            </div>\n            <div>\n                <div class=\"tui-image-editor-newline tui-image-editor-checkbox-wrap\">\n                    <div class=\"tui-image-editor-checkbox\">\n                        <input type=\"checkbox\" id=\"tie-gradient-transparency\">\n                        <label for=\"tie-gradient-transparency\">Grayscale</label>\n                    </div>\n                </div>\n                <div class=\"tui-image-editor-newline tui-image-editor-range-wrap short\">\n                    <label>Value</label>\n                    <div id=\"tie-gradient-transparency-range\"></div>\n                </div>\n            </div>\n        </li>\n        <li class=\"tui-image-editor-partition only-left-right\">\n            <div></div>\n        </li>\n        <li class=\"tui-image-editor-submenu-align\">\n            <div>\n                <div class=\"tui-image-editor-checkbox\">\n                    <input type=\"checkbox\" id=\"tie-brightness\">\n                    <label for=\"tie-brightness\">Brightness</label>\n                </div>\n                <div class=\"tui-image-editor-range-wrap short\">\n                    <div id=\"tie-brightness-range\"></div>\n                </div>\n            </div>\n            <div>\n                <div class=\"tui-image-editor-checkbox\">\n                    <input type=\"checkbox\" id=\"tie-noise\">\n                    <label for=\"tie-noise\">Noise</label>\n                </div>\n                <div class=\"tui-image-editor-range-wrap short\">\n                    <div id=\"tie-noise-range\"></div>\n                </div>\n            </div>\n\n            <div>\n                <div class=\"tui-image-editor-checkbox\">\n                    <input type=\"checkbox\" id=\"tie-pixelate\">\n                    <label for=\"tie-pixelate\">Pixelate</label>\n                </div>\n                <div class=\"tui-image-editor-range-wrap short\">\n                    <div id=\"tie-pixelate-range\"></div>\n                </div>\n            </div>\n            <div>\n                <div class=\"tui-image-editor-newline tui-image-editor-checkbox-wrap\">\n                    <div class=\"tui-image-editor-checkbox\">\n                        <input type=\"checkbox\" id=\"tie-color-filter\">\n                        <label for=\"tie-color-filter\">Color Filter</label>\n                    </div>\n                </div>\n                <div class=\"tui-image-editor-newline tui-image-editor-range-wrap short\">\n                    <label>Threshold</label>\n                    <div id=\"tie-colorfilter-threshole-range\"></div>\n                </div>\n            </div>\n        </li>\n        <li class=\"tui-image-editor-partition\">\n            <div></div>\n        </li>\n        <li>\n            <div class=\"filter-color-item\">\n                <div id=\"tie-filter-tint-color\" title=\"Tint\"></div>\n                <div class=\"tui-image-editor-checkbox\">\n                    <input type=\"checkbox\" id=\"tie-tint\">\n                    <label for=\"tie-tint\"></label>\n                </div>\n            </div>\n            <div class=\"filter-color-item\">\n                <div id=\"tie-filter-multiply-color\" title=\"Multiply\"></div>\n                <div class=\"tui-image-editor-checkbox\">\n                    <input type=\"checkbox\" id=\"tie-multiply\">\n                    <label for=\"tie-multiply\"></label>\n                </div>\n            </div>\n            <div class=\"filter-color-item\">\n                <div id=\"tie-filter-blend-color\" title=\"Blend\"></div>\n                <div class=\"tui-image-editor-checkbox\">\n                    <input type=\"checkbox\" id=\"tie-blend\">\n                    <label for=\"tie-blend\"></label>\n                </div>\n            </div>\n        </li>\n    </ul>\n";
 	};
 
@@ -11800,10 +11661,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _tuiCodeSnippet = __webpack_require__(3);
 
@@ -11817,7 +11674,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	exports.default = {
+	module.exports = {
 
 	    /**
 	     * Get ui actions
@@ -12360,10 +12217,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12397,7 +12250,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  OTHER DEALINGS IN THE SOFTWARE.
 	  For more information, please refer to http://unlicense.org/
 	*/
-	var ImageTracer = function () {
+	module.exports = function () {
 	    _createClass(ImageTracer, null, [{
 	        key: 'tracerDefaultOption',
 	        value: function tracerDefaultOption() {
@@ -13506,17 +13359,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return ImageTracer;
 	}();
 
-	exports.default = ImageTracer;
-
 /***/ }),
 /* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
@@ -14952,7 +14799,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}();
 
 	CustomEvents.mixin(Graphics);
-	exports.default = Graphics;
+	module.exports = Graphics;
 
 /***/ }),
 /* 105 */
@@ -14965,10 +14812,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -15094,17 +14937,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return ImageLoader;
 	}(_component2.default);
 
-	exports.default = ImageLoader;
+	module.exports = ImageLoader;
 
 /***/ }),
 /* 107 */
 /***/ (function(module, exports) {
 
 	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -15284,17 +15123,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return Component;
 	}();
 
-	exports.default = Component;
+	module.exports = Component;
 
 /***/ }),
 /* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -15669,17 +15504,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Cropper;
 	}(_component2.default);
 
-	exports.default = Cropper;
+	module.exports = Cropper;
 
 /***/ }),
 /* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _tuiCodeSnippet = __webpack_require__(3);
 
@@ -16136,17 +15967,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	});
 
-	exports.default = Cropzone;
+	module.exports = Cropzone;
 
 /***/ }),
 /* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -16349,17 +16176,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Flip;
 	}(_component2.default);
 
-	exports.default = Flip;
+	module.exports = Flip;
 
 /***/ }),
 /* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -16498,17 +16321,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Rotation;
 	}(_component2.default);
 
-	exports.default = Rotation;
+	module.exports = Rotation;
 
 /***/ }),
 /* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -16613,17 +16432,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return FreeDrawing;
 	}(_component2.default);
 
-	exports.default = FreeDrawing;
+	module.exports = FreeDrawing;
 
 /***/ }),
 /* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -16839,17 +16654,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Line;
 	}(_component2.default);
 
-	exports.default = Line;
+	module.exports = Line;
 
 /***/ }),
 /* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -17627,17 +17438,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Text;
 	}(_component2.default);
 
-	exports.default = Text;
+	module.exports = Text;
 
 /***/ }),
 /* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -17837,17 +17644,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Icon;
 	}(_component2.default);
 
-	exports.default = Icon;
+	module.exports = Icon;
 
 /***/ }),
 /* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -18160,17 +17963,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Filter;
 	}(_component2.default);
 
-	exports.default = Filter;
+	module.exports = Filter;
 
 /***/ }),
 /* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _fabric = __webpack_require__(105);
 
@@ -18269,17 +18068,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
 	     * @fileoverview Mask extending fabric.Image.filters.Mask
 	     */
-	exports.default = Mask;
+
+
+	module.exports = Mask;
 
 /***/ }),
 /* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
 
 	var _fabric = __webpack_require__(105);
 
@@ -18309,17 +18106,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
 	     * @fileoverview Sharpen extending fabric.Image.filters.Convolute
 	     */
-	exports.default = Sharpen;
+
+
+	module.exports = Sharpen;
 
 /***/ }),
 /* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
 
 	var _fabric = __webpack_require__(105);
 
@@ -18349,17 +18144,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
 	     * @fileoverview Emboss extending fabric.Image.filters.Convolute
 	     */
-	exports.default = Emboss;
+
+
+	module.exports = Emboss;
 
 /***/ }),
 /* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _fabric = __webpack_require__(105);
 
@@ -18465,17 +18258,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
 	     * @fileoverview ColorFilter extending fabric.Image.filters.BaseFilter
 	     */
-	exports.default = ColorFilter;
+
+
+	module.exports = ColorFilter;
 
 /***/ }),
 /* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -18968,7 +18759,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Shape;
 	}(_component2.default);
 
-	exports.default = Shape;
+	module.exports = Shape;
 
 /***/ }),
 /* 122 */
@@ -18976,9 +18767,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 	/**
 	 * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
 	 * @fileoverview Shape resize helper
@@ -19168,7 +18956,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    shape.set(options);
 	}
 
-	exports.default = {
+	module.exports = {
 	    /**
 	     * Set each origin value to shape
 	     * @param {fabric.Object} shape - Shape object
@@ -19241,10 +19029,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -19786,17 +19570,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return Censor;
 	}(_component2.default);
 
-	exports.default = Censor;
+	module.exports = Censor;
 
 /***/ }),
 /* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _fabric = __webpack_require__(105);
 
@@ -19871,17 +19651,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @author maxinminax <ng.nhuphu@gmail.com>
 	     * @fileoverview CensorRect extending fabric.Rect
 	     */
-	exports.default = CensorRect;
+
+
+	module.exports = CensorRect;
 
 /***/ }),
 /* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _fabric = __webpack_require__(105);
 
@@ -19961,17 +19739,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @author maxinminax <ng.nhuphu@gmail.com>
 	     * @fileoverview CensorCircle extending fabric.Rect
 	     */
-	exports.default = CensorCircle;
+
+
+	module.exports = CensorCircle;
 
 /***/ }),
 /* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _fabric = __webpack_require__(105);
 
@@ -20051,7 +19827,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @author maxinminax <ng.nhuphu@gmail.com>
 	     * @fileoverview CensorTriangle extending fabric.Rect
 	     */
-	exports.default = CensorTriangle;
+
+
+	module.exports = CensorTriangle;
 
 /***/ }),
 /* 127 */
@@ -20059,9 +19837,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 	/**
 	 * @author maxinminax <ng.nhuphu@gmail.com>
 	 * @fileoverview CensorShape resize helper
@@ -20251,7 +20026,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    shape.set(options);
 	}
 
-	exports.default = {
+	module.exports = {
 	    /**
 	     * Set each origin value to shape
 	     * @param {fabric.Object} shape - Shape object
@@ -20325,10 +20100,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _drawingMode = __webpack_require__(129);
@@ -20401,17 +20172,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return CropperDrawingMode;
 	}(_drawingMode2.default);
 
-	exports.default = CropperDrawingMode;
+	module.exports = CropperDrawingMode;
 
 /***/ }),
 /* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
@@ -20487,17 +20254,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return DrawingMode;
 	}();
 
-	exports.default = DrawingMode;
+	module.exports = DrawingMode;
 
 /***/ }),
 /* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -20572,17 +20335,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return FreeDrawingMode;
 	}(_drawingMode2.default);
 
-	exports.default = FreeDrawingMode;
+	module.exports = FreeDrawingMode;
 
 /***/ }),
 /* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -20657,17 +20416,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return LineDrawingMode;
 	}(_drawingMode2.default);
 
-	exports.default = LineDrawingMode;
+	module.exports = LineDrawingMode;
 
 /***/ }),
 /* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -20741,17 +20496,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return ShapeDrawingMode;
 	}(_drawingMode2.default);
 
-	exports.default = ShapeDrawingMode;
+	module.exports = ShapeDrawingMode;
 
 /***/ }),
 /* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -20825,17 +20576,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return TextDrawingMode;
 	}(_drawingMode2.default);
 
-	exports.default = TextDrawingMode;
+	module.exports = TextDrawingMode;
 
 /***/ }),
 /* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -20909,7 +20656,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return CensorDrawingMode;
 	}(_drawingMode2.default);
 
-	exports.default = CensorDrawingMode;
+	module.exports = CensorDrawingMode;
 
 /***/ }),
 /* 135 */
@@ -20923,10 +20670,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _command = __webpack_require__(69);
 
@@ -20989,17 +20732,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	exports.default = command;
+	module.exports = command;
 
 /***/ }),
 /* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _command = __webpack_require__(69);
 
@@ -21052,17 +20791,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	exports.default = command;
+	module.exports = command;
 
 /***/ }),
 /* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _command = __webpack_require__(69);
 
@@ -21123,17 +20858,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	exports.default = command;
+	module.exports = command;
 
 /***/ }),
 /* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _command = __webpack_require__(69);
 
@@ -21203,17 +20934,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	exports.default = command;
+	module.exports = command;
 
 /***/ }),
 /* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _command = __webpack_require__(69);
 
@@ -21282,17 +21009,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	exports.default = command;
+	module.exports = command;
 
 /***/ }),
 /* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _command = __webpack_require__(69);
 
@@ -21355,17 +21078,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	exports.default = command;
+	module.exports = command;
 
 /***/ }),
 /* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _command = __webpack_require__(69);
 
@@ -21451,17 +21170,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	exports.default = command;
+	module.exports = command;
 
 /***/ }),
 /* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _command = __webpack_require__(69);
 
@@ -21534,17 +21249,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	exports.default = command;
+	module.exports = command;
 
 /***/ }),
 /* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _tuiCodeSnippet = __webpack_require__(3);
 
@@ -21630,17 +21341,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	exports.default = command;
+	module.exports = command;
 
 /***/ }),
 /* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _command = __webpack_require__(69);
 
@@ -21707,17 +21414,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	exports.default = command;
+	module.exports = command;
 
 /***/ }),
 /* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _tuiCodeSnippet = __webpack_require__(3);
 
@@ -21800,17 +21503,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	exports.default = command;
+	module.exports = command;
 
 /***/ }),
 /* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _tuiCodeSnippet = __webpack_require__(3);
 
@@ -21896,17 +21595,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	exports.default = command;
+	module.exports = command;
 
 /***/ }),
 /* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _command = __webpack_require__(69);
 
@@ -21958,17 +21653,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	exports.default = command;
+	module.exports = command;
 
 /***/ }),
 /* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
 
 	var _command = __webpack_require__(69);
 
@@ -22019,17 +21710,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	exports.default = command;
+	module.exports = command;
 
 /***/ }),
 /* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _command = __webpack_require__(69);
 
@@ -22103,17 +21790,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	exports.default = command;
+	module.exports = command;
 
 /***/ }),
 /* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
 
 	var _command = __webpack_require__(69);
 
@@ -22167,17 +21850,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	exports.default = command;
+	module.exports = command;
 
 /***/ }),
 /* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _command = __webpack_require__(69);
 
@@ -22234,17 +21913,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	exports.default = command;
+	module.exports = command;
 
 /***/ }),
 /* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _command = __webpack_require__(69);
 
@@ -22303,17 +21978,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	exports.default = command;
+	module.exports = command;
 
 /***/ }),
 /* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
 
 	var _command = __webpack_require__(69);
 
@@ -22367,17 +22038,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	exports.default = command;
+	module.exports = command;
 
 /***/ }),
 /* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _tuiCodeSnippet = __webpack_require__(3);
 
@@ -22458,17 +22125,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	exports.default = command;
+	module.exports = command;
 
 /***/ }),
 /* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 
 	var _command = __webpack_require__(69);
 
@@ -22539,7 +22202,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	_command2.default.register(command);
 
-	exports.default = command;
+	module.exports = command;
 
 /***/ })
 /******/ ])

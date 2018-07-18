@@ -2,7 +2,7 @@
  * @author maxinminax <ng.nhuphu@gmail.com>
  * @fileoverview CensorCircle extending fabric.Rect
  */
-import fabric from 'fabric/dist/fabric.require';
+import fabric from 'fabric';
 
 /**
  * CensorCircle object

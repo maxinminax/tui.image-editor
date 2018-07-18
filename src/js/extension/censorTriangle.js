@@ -2,7 +2,7 @@
  * @author maxinminax <ng.nhuphu@gmail.com>
  * @fileoverview CensorTriangle extending fabric.Rect
  */
-import fabric from 'fabric/dist/fabric.require';
+import fabric from 'fabric';
 
 /**
  * CensorTriangle object

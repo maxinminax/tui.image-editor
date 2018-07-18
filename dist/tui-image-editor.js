@@ -6,11 +6,11 @@
  */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("tui-code-snippet"), require("fabric/dist/fabric.require"));
+		module.exports = factory(require("tui-code-snippet"), require("fabric/dist/fabric"));
 	else if(typeof define === 'function' && define.amd)
-		define(["tui-code-snippet", "fabric/dist/fabric.require"], factory);
+		define(["tui-code-snippet", "fabric/dist/fabric"], factory);
 	else if(typeof exports === 'object')
-		exports["ImageEditor"] = factory(require("tui-code-snippet"), require("fabric/dist/fabric.require"));
+		exports["ImageEditor"] = factory(require("tui-code-snippet"), require("fabric/dist/fabric"));
 	else
 		root["tui"] = root["tui"] || {}, root["tui"]["ImageEditor"] = factory((root["tui"] && root["tui"]["util"]), root["fabric"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_105__) {

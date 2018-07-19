@@ -17025,7 +17025,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }, {
 	        key: 'getText',
 	        value: function getText(activeObj) {
-	            return activeObj.getText();
+	            return activeObj.text;
 	        }
 
 	        /**
@@ -17411,29 +17411,29 @@ return /******/ (function(modules) { // webpackBootstrap
 	            canvas.remove(obj);
 
 	            this._editingObj = obj;
-	            this._textarea.value = obj.getText();
+	            this._textarea.value = obj.text;
 
 	            this._editingObjInfos = {
-	                left: this._editingObj.getLeft(),
-	                top: this._editingObj.getTop(),
-	                width: this._editingObj.getWidth(),
-	                height: this._editingObj.getHeight()
+	                left: this._editingObj.left,
+	                top: this._editingObj.top,
+	                width: this._editingObj.width,
+	                height: this._editingObj.height
 	            };
 
 	            textareaStyle.display = 'block';
 	            textareaStyle.left = obj.oCoords.tl.x / ratio + 'px';
 	            textareaStyle.top = obj.oCoords.tl.y / ratio + 'px';
-	            textareaStyle.width = Math.ceil(obj.getWidth() / ratio) + 'px';
-	            textareaStyle.height = Math.ceil(obj.getHeight() / ratio) + 'px';
-	            textareaStyle.transform = 'rotate(' + obj.getAngle() + 'deg)';
-	            textareaStyle.color = obj.getFill();
+	            textareaStyle.width = Math.ceil(obj.width / ratio) + 'px';
+	            textareaStyle.height = Math.ceil(obj.height / ratio) + 'px';
+	            textareaStyle.transform = 'rotate(' + obj.angle + 'deg)';
+	            textareaStyle.color = obj.fill;
 
-	            textareaStyle['font-size'] = obj.getFontSize() / ratio + 'px';
-	            textareaStyle['font-family'] = obj.getFontFamily();
-	            textareaStyle['font-style'] = obj.getFontStyle();
-	            textareaStyle['font-weight'] = obj.getFontWeight();
-	            textareaStyle['text-align'] = obj.getTextAlign();
-	            textareaStyle['line-height'] = obj.getLineHeight() + EXTRA_PIXEL_LINEHEIGHT;
+	            textareaStyle['font-size'] = obj.fontSize / ratio + 'px';
+	            textareaStyle['font-family'] = obj.fontFamily;
+	            textareaStyle['font-style'] = obj.fontStyle;
+	            textareaStyle['font-weight'] = obj.fontWeight;
+	            textareaStyle['text-align'] = obj.textAlign;
+	            textareaStyle['line-height'] = obj.lineHeight + EXTRA_PIXEL_LINEHEIGHT;
 	            textareaStyle['transform-origin'] = 'left top';
 
 	            this._textarea.focus();

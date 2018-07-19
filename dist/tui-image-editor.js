@@ -16879,7 +16879,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                canvas.forEachObject(function (obj) {
 	                    if (obj.type === 'i-text') {
 	                        if (obj.text === '') {
-	                            obj.remove();
+	                            canvas.remove(obj);
 	                        } else {
 	                            obj.set({
 	                                left: obj.left + obj.width / 2,
@@ -17288,7 +17288,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	            if (obj) {
 	                // obj is empty object at initial time, will be set fabric object
 	                if (obj.text === '') {
-	                    obj.remove();
+	                    var canvas = this.getCanvas();
+	                    canvas.remove(obj);
 	                }
 	            }
 	        }
@@ -17406,7 +17407,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	            this.isPrevEditing = true;
 
-	            obj.remove();
+	            var canvas = this.getCanvas();
+	            canvas.remove(obj);
 
 	            this._editingObj = obj;
 	            this._textarea.value = obj.getText();

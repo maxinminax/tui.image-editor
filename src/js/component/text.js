@@ -173,7 +173,7 @@ class Text extends Component {
             canvas.forEachObject(obj => {
                 if (obj.type === 'i-text') {
                     if (obj.text === '') {
-                        obj.remove();
+                        canvas.remove(obj);
                     } else {
                         obj.set({
                             left: obj.left + (obj.width / 2),
@@ -520,7 +520,8 @@ class Text extends Component {
         if (obj) {
             // obj is empty object at initial time, will be set fabric object
             if (obj.text === '') {
-                obj.remove();
+                const canvas = this.getCanvas();
+                canvas.remove(obj);
             }
         }
     }
@@ -620,7 +621,8 @@ class Text extends Component {
 
         this.isPrevEditing = true;
 
-        obj.remove();
+        const canvas = this.getCanvas();
+        canvas.remove(obj);
 
         this._editingObj = obj;
         this._textarea.value = obj.getText();

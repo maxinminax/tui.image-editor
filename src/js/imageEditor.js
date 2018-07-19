@@ -319,11 +319,11 @@ class ImageEditor {
     removeActiveObject() {
         const selection = this._graphics.getActiveObject();
 
-        if (selection.type === 'activeSelection') {
+        if (selection && selection.type === 'activeSelection') {
             const objects = selection.getObjects();
             this.discardSelection();
             this._removeObjectStream(objects);
-        } else {
+        } else if (selection) {
             const activeObjectId = this._graphics.getObjectId(selection);
             this.removeObject(activeObjectId);
         }

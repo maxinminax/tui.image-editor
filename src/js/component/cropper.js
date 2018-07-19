@@ -94,7 +94,7 @@ class Cropper extends Component {
             lockRotation: true
         }, this.graphics.cropSelectionStyle);
 
-        canvas.deactivateAll();
+        canvas.discardActiveObject();
         canvas.add(this._cropzone);
         canvas.on('mouse:down', this._listeners.mousedown);
         canvas.selection = false;

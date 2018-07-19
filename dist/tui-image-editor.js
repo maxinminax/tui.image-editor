@@ -972,11 +972,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	        value: function removeActiveObject() {
 	            var selection = this._graphics.getActiveObject();
 
-	            if (selection.type === 'activeSelection') {
+	            if (selection && selection.type === 'activeSelection') {
 	                var objects = selection.getObjects();
 	                this.discardSelection();
 	                this._removeObjectStream(objects);
-	            } else {
+	            } else if (selection) {
 	                var activeObjectId = this._graphics.getObjectId(selection);
 	                this.removeObject(activeObjectId);
 	            }
@@ -13634,7 +13634,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }, {
 	        key: 'deactivateAll',
 	        value: function deactivateAll() {
-	            this._canvas.deactivateAll();
+	            this._canvas.discardActiveObject();
 
 	            return this;
 	        }
@@ -15262,7 +15262,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                lockRotation: true
 	            }, this.graphics.cropSelectionStyle);
 
-	            canvas.deactivateAll();
+	            canvas.discardActiveObject();
 	            canvas.add(this._cropzone);
 	            canvas.on('mouse:down', this._listeners.mousedown);
 	            canvas.selection = false;
@@ -16888,7 +16888,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    }
 	                });
 	            } else {
-	                canvas.deactivateAllWithDispatch();
+	                canvas.discardActiveObject();
 	                this._removeTextarea();
 	            }
 
@@ -19092,7 +19092,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    ry: 0,
 	    lockSkewingX: true,
 	    lockSkewingY: true,
-	    lockUniScaling: true,
+	    lockUniScaling: false,
 	    bringForward: true,
 	    isRegular: false,
 	    transparentCorners: false,

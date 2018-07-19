@@ -176,7 +176,7 @@ class Graphics {
      * @returns {Graphics} this
      */
     deactivateAll() {
-        this._canvas.deactivateAll();
+        this._canvas.discardActiveObject();
 
         return this;
     }

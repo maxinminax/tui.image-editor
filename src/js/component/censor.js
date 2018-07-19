@@ -26,7 +26,7 @@ const DEFAULT_OPTIONS = {
     ry: 0,
     lockSkewingX: true,
     lockSkewingY: true,
-    lockUniScaling: true,
+    lockUniScaling: false,
     bringForward: true,
     isRegular: false,
     transparentCorners: false,

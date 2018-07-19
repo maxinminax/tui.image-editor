@@ -196,12 +196,9 @@ const Cropzone = fabric.util.createClass(fabric.Rect, /** @lends Cropzone.protot
      * @private
      */
     _getCoordinates(ctx) {
-        const width = this.getWidth(),
-            height = this.getHeight(),
+        const {left, top, width, height} = this,
             halfWidth = width / 2,
             halfHeight = height / 2,
-            left = this.getLeft(),
-            top = this.getTop(),
             canvasEl = ctx.canvas; // canvas element, not fabric object
 
         return {
@@ -229,8 +226,8 @@ const Cropzone = fabric.util.createClass(fabric.Rect, /** @lends Cropzone.protot
      * @private
      */
     _strokeBorder(ctx, strokeStyle, {lineDashWidth, lineDashOffset, lineWidth}) {
-        const halfWidth = this.getWidth() / 2,
-            halfHeight = this.getHeight() / 2;
+        const halfWidth = this.width / 2,
+            halfHeight = this.height / 2;
 
         ctx.save();
         ctx.strokeStyle = strokeStyle;
@@ -261,15 +258,13 @@ const Cropzone = fabric.util.createClass(fabric.Rect, /** @lends Cropzone.protot
      * @private
      */
     _onMoving() {
-        const left = this.getLeft(),
-            top = this.getTop(),
-            width = this.getWidth(),
-            height = this.getHeight(),
-            maxLeft = this.canvas.getWidth() - width,
-            maxTop = this.canvas.getHeight() - height;
+        const {left, top, width, height} = this,
+            maxLeft = this.canvas.width - width,
+            maxTop = this.canvas.height - height;
 
-        this.setLeft(clamp(left, 0, maxLeft));
-        this.setTop(clamp(top, 0, maxTop));
+        this.left = clamp(left, 0, maxLeft);
+        this.top = clamp(top, 0, maxTop);
+        this.setCoords();
     },
 
     /**
@@ -313,8 +308,8 @@ const Cropzone = fabric.util.createClass(fabric.Rect, /** @lends Cropzone.protot
      * @private
      */
     _calcTopLeftScalingSizeFromPointer(x, y) {
-        const bottom = this.getHeight() + this.top,
-            right = this.getWidth() + this.left,
+        const bottom = this.height + this.top,
+            right = this.width + this.left,
             top = clamp(y, 0, bottom - 1), // 0 <= top <= (bottom - 1)
             left = clamp(x, 0, right - 1); // 0 <= left <= (right - 1)
 

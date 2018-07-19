@@ -15248,10 +15248,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	            });
 
 	            this._cropzone = new _cropzone2.default({
-	                left: -10,
-	                top: -10,
+	                left: 0,
+	                top: 0,
 	                width: 1,
-	                height: 1,
+	                height: 0,
 	                strokeWidth: 0, // {@link https://github.com/kangax/fabric.js/issues/2860}
 	                cornerSize: 10,
 	                cornerColor: 'black',
@@ -15259,7 +15259,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	                hasRotatingPoint: false,
 	                hasBorders: false,
 	                lockScalingFlip: true,
-	                lockRotation: true
+	                lockRotation: true,
+	                objectCaching: false
 	            }, this.graphics.cropSelectionStyle);
 
 	            canvas.discardActiveObject();
@@ -15285,7 +15286,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            if (!cropzone) {
 	                return;
 	            }
-	            cropzone.remove();
+	            canvas.remove(cropzone);
 	            canvas.selection = true;
 	            canvas.defaultCursor = 'default';
 	            canvas.off('mouse:down', this._listeners.mousedown);
@@ -15343,7 +15344,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var cropzone = this._cropzone;
 
 	            if (Math.abs(x - this._startX) + Math.abs(y - this._startY) > MOUSE_MOVE_THRESHOLD) {
-	                cropzone.remove();
+	                canvas.remove(cropzone);
 	                cropzone.set(this._calcRectDimensionFromPoint(x, y));
 
 	                canvas.add(cropzone);
@@ -15435,7 +15436,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 
 	            if (containsCropzone) {
-	                this._cropzone.remove();
+	                canvas.remove(this._cropzone);
 	            }
 
 	            var imageData = {
@@ -15465,10 +15466,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 
 	            return {
-	                left: cropzone.getLeft(),
-	                top: cropzone.getTop(),
-	                width: cropzone.getWidth(),
-	                height: cropzone.getHeight()
+	                left: cropzone.left,
+	                top: cropzone.top,
+	                width: cropzone.width,
+	                height: cropzone.height
 	            };
 	        }
 
@@ -15727,12 +15728,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @private
 	     */
 	    _getCoordinates: function _getCoordinates(ctx) {
-	        var width = this.getWidth(),
-	            height = this.getHeight(),
+	        var left = this.left,
+	            top = this.top,
+	            width = this.width,
+	            height = this.height,
 	            halfWidth = width / 2,
 	            halfHeight = height / 2,
-	            left = this.getLeft(),
-	            top = this.getTop(),
 	            canvasEl = ctx.canvas; // canvas element, not fabric object
 
 	        return {
@@ -15763,8 +15764,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	            lineDashOffset = _ref.lineDashOffset,
 	            lineWidth = _ref.lineWidth;
 
-	        var halfWidth = this.getWidth() / 2,
-	            halfHeight = this.getHeight() / 2;
+	        var halfWidth = this.width / 2,
+	            halfHeight = this.height / 2;
 
 	        ctx.save();
 	        ctx.strokeStyle = strokeStyle;
@@ -15796,15 +15797,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @private
 	     */
 	    _onMoving: function _onMoving() {
-	        var left = this.getLeft(),
-	            top = this.getTop(),
-	            width = this.getWidth(),
-	            height = this.getHeight(),
-	            maxLeft = this.canvas.getWidth() - width,
-	            maxTop = this.canvas.getHeight() - height;
+	        var left = this.left,
+	            top = this.top,
+	            width = this.width,
+	            height = this.height,
+	            maxLeft = this.canvas.width - width,
+	            maxTop = this.canvas.height - height;
 
-	        this.setLeft(clamp(left, 0, maxLeft));
-	        this.setTop(clamp(top, 0, maxTop));
+
+	        this.left = clamp(left, 0, maxLeft);
+	        this.top = clamp(top, 0, maxTop);
+	        this.setCoords();
 	    },
 
 
@@ -15851,8 +15854,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @private
 	     */
 	    _calcTopLeftScalingSizeFromPointer: function _calcTopLeftScalingSizeFromPointer(x, y) {
-	        var bottom = this.getHeight() + this.top,
-	            right = this.getWidth() + this.left,
+	        var bottom = this.height + this.top,
+	            right = this.width + this.left,
 	            top = clamp(y, 0, bottom - 1),
 	            // 0 <= top <= (bottom - 1)
 	        left = clamp(x, 0, right - 1); // 0 <= left <= (right - 1)
@@ -16090,7 +16093,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            if (isChangingFlipY) {
 	                angle *= -1;
 	            }
-	            canvasImage.setAngle(parseFloat(angle)).setCoords(); // parseFloat for -0 to 0
+	            canvasImage.set('angle', parseFloat(angle)).setCoords(); // parseFloat for -0 to 0
 	        }
 
 	        /**
@@ -16263,7 +16266,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	            var canvasImage = this.getCanvasImage();
 	            var oldImageCenter = canvasImage.getCenterPoint();
-	            canvasImage.setAngle(angle).setCoords();
+	            canvasImage.set('angle', angle);
 	            this.adjustCanvasDimension();
 	            var newImageCenter = canvasImage.getCenterPoint();
 	            this._rotateForEachObject(oldImageCenter, newImageCenter, angle - oldAngle);

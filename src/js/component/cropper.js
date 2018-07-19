@@ -80,10 +80,10 @@ class Cropper extends Component {
         });
 
         this._cropzone = new Cropzone({
-            left: -10,
-            top: -10,
+            left: 0,
+            top: 0,
             width: 1,
-            height: 1,
+            height: 0,
             strokeWidth: 0, // {@link https://github.com/kangax/fabric.js/issues/2860}
             cornerSize: 10,
             cornerColor: 'black',
@@ -91,7 +91,8 @@ class Cropper extends Component {
             hasRotatingPoint: false,
             hasBorders: false,
             lockScalingFlip: true,
-            lockRotation: true
+            lockRotation: true,
+            objectCaching: false
         }, this.graphics.cropSelectionStyle);
 
         canvas.discardActiveObject();
@@ -114,7 +115,7 @@ class Cropper extends Component {
         if (!cropzone) {
             return;
         }
-        cropzone.remove();
+        canvas.remove(cropzone);
         canvas.selection = true;
         canvas.defaultCursor = 'default';
         canvas.off('mouse:down', this._listeners.mousedown);
@@ -164,7 +165,7 @@ class Cropper extends Component {
         const cropzone = this._cropzone;
 
         if (Math.abs(x - this._startX) + Math.abs(y - this._startY) > MOUSE_MOVE_THRESHOLD) {
-            cropzone.remove();
+            canvas.remove(cropzone);
             cropzone.set(this._calcRectDimensionFromPoint(x, y));
 
             canvas.add(cropzone);
@@ -246,7 +247,7 @@ class Cropper extends Component {
         }
 
         if (containsCropzone) {
-            this._cropzone.remove();
+            canvas.remove(this._cropzone);
         }
 
         const imageData = {
@@ -273,10 +274,10 @@ class Cropper extends Component {
         }
 
         return {
-            left: cropzone.getLeft(),
-            top: cropzone.getTop(),
-            width: cropzone.getWidth(),
-            height: cropzone.getHeight()
+            left: cropzone.left,
+            top: cropzone.top,
+            width: cropzone.width,
+            height: cropzone.height
         };
     }
 

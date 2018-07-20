@@ -438,7 +438,7 @@ class Text extends Component {
         const textareaStyle = this._textarea.style;
 
         setTimeout(() => {
-            obj.setText(this._textarea.value);
+            obj.set('text', this._textarea.value);
 
             textareaStyle.width = `${Math.ceil(obj.width / ratio)}px`;
             textareaStyle.height = `${Math.ceil(obj.height / ratio)}px`;
@@ -500,9 +500,11 @@ class Text extends Component {
         const obj = fEvent.target;
         const scalingSize = obj.fontSize * obj.scaleY;
 
-        obj.setFontSize(scalingSize);
-        obj.setScaleX(1);
-        obj.setScaleY(1);
+        obj.set({
+            fontSize: scalingSize,
+            scaleX: 1,
+            scaleY: 1
+        });
     }
 
     /**

@@ -17194,7 +17194,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var textareaStyle = this._textarea.style;
 
 	            setTimeout(function () {
-	                obj.setText(_this5._textarea.value);
+	                obj.set('text', _this5._textarea.value);
 
 	                textareaStyle.width = Math.ceil(obj.width / ratio) + 'px';
 	                textareaStyle.height = Math.ceil(obj.height / ratio) + 'px';
@@ -17265,9 +17265,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var obj = fEvent.target;
 	            var scalingSize = obj.fontSize * obj.scaleY;
 
-	            obj.setFontSize(scalingSize);
-	            obj.setScaleX(1);
-	            obj.setScaleY(1);
+	            obj.set({
+	                fontSize: scalingSize,
+	                scaleX: 1,
+	                scaleY: 1
+	            });
 	        }
 
 	        /**

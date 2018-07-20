@@ -17263,7 +17263,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        key: '_onFabricScaling',
 	        value: function _onFabricScaling(fEvent) {
 	            var obj = fEvent.target;
-	            var scalingSize = obj.getFontSize() * obj.getScaleY();
+	            var scalingSize = obj.fontSize * obj.scaleY;
 
 	            obj.setFontSize(scalingSize);
 	            obj.setScaleX(1);

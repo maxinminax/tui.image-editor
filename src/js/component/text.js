@@ -498,7 +498,7 @@ class Text extends Component {
      */
     _onFabricScaling(fEvent) {
         const obj = fEvent.target;
-        const scalingSize = obj.getFontSize() * obj.getScaleY();
+        const scalingSize = obj.fontSize * obj.scaleY;
 
         obj.setFontSize(scalingSize);
         obj.setScaleX(1);

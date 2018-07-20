@@ -58,9 +58,7 @@ const Mask = fabric.util.createClass(fabric.Image.filters.Mask, /** @lends Mask.
         const {mask} = this;
         const maskImg = mask.getElement();
 
-        const left = mask.getLeft();
-        const top = mask.getTop();
-        const angle = mask.getAngle();
+        const {left, top, angle} = mask;
 
         maskCtx.save();
         maskCtx.translate(left, top);

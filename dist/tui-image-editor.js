@@ -15363,8 +15363,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        key: '_calcRectDimensionFromPoint',
 	        value: function _calcRectDimensionFromPoint(x, y) {
 	            var canvas = this.getCanvas();
-	            var canvasWidth = canvas.getWidth();
-	            var canvasHeight = canvas.getHeight();
+	            var canvasWidth = canvas.width;
+	            var canvasHeight = canvas.height;
 	            var startX = this._startX;
 	            var startY = this._startY;
 	            var left = clamp(x, 0, startX);
@@ -17175,8 +17175,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var obj = this._editingObj;
 	            var textareaStyle = this._textarea.style;
 
-	            textareaStyle.width = Math.ceil(obj.getWidth() / ratio) + 'px';
-	            textareaStyle.height = Math.ceil(obj.getHeight() / ratio) + 'px';
+	            textareaStyle.width = Math.ceil(obj.width / ratio) + 'px';
+	            textareaStyle.height = Math.ceil(obj.height / ratio) + 'px';
 	        }
 
 	        /**
@@ -17196,8 +17196,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	            setTimeout(function () {
 	                obj.setText(_this5._textarea.value);
 
-	                textareaStyle.width = Math.ceil(obj.getWidth() / ratio) + 'px';
-	                textareaStyle.height = Math.ceil(obj.getHeight() / ratio) + 'px';
+	                textareaStyle.width = Math.ceil(obj.width / ratio) + 'px';
+	                textareaStyle.height = Math.ceil(obj.height / ratio) + 'px';
 	            }, 0);
 	        }
 
@@ -17213,8 +17213,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var editingObj = this._editingObj;
 	            var editingObjInfos = this._editingObjInfos;
 	            var textContent = this._textarea.value;
-	            var transWidth = editingObj.getWidth() / ratio - editingObjInfos.width / ratio;
-	            var transHeight = editingObj.getHeight() / ratio - editingObjInfos.height / ratio;
+	            var transWidth = editingObj.width / ratio - editingObjInfos.width / ratio;
+	            var transHeight = editingObj.height / ratio - editingObjInfos.height / ratio;
 
 	            if (ratio === 1) {
 	                transWidth /= 2;
@@ -18037,9 +18037,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        var maskImg = mask.getElement();
 
-	        var left = mask.getLeft();
-	        var top = mask.getTop();
-	        var angle = mask.getAngle();
+	        var left = mask.left,
+	            top = mask.top,
+	            angle = mask.angle;
+
 
 	        maskCtx.save();
 	        maskCtx.translate(left, top);

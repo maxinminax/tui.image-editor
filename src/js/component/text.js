@@ -424,8 +424,8 @@ class Text extends Component {
         const obj = this._editingObj;
         const textareaStyle = this._textarea.style;
 
-        textareaStyle.width = `${Math.ceil(obj.getWidth() / ratio)}px`;
-        textareaStyle.height = `${Math.ceil(obj.getHeight() / ratio)}px`;
+        textareaStyle.width = `${Math.ceil(obj.width / ratio)}px`;
+        textareaStyle.height = `${Math.ceil(obj.height / ratio)}px`;
     }
 
     /**
@@ -440,8 +440,8 @@ class Text extends Component {
         setTimeout(() => {
             obj.setText(this._textarea.value);
 
-            textareaStyle.width = `${Math.ceil(obj.getWidth() / ratio)}px`;
-            textareaStyle.height = `${Math.ceil(obj.getHeight() / ratio)}px`;
+            textareaStyle.width = `${Math.ceil(obj.width / ratio)}px`;
+            textareaStyle.height = `${Math.ceil(obj.height / ratio)}px`;
         }, 0);
     }
 
@@ -454,8 +454,8 @@ class Text extends Component {
         const editingObj = this._editingObj;
         const editingObjInfos = this._editingObjInfos;
         const textContent = this._textarea.value;
-        let transWidth = (editingObj.getWidth() / ratio) - (editingObjInfos.width / ratio);
-        let transHeight = (editingObj.getHeight() / ratio) - (editingObjInfos.height / ratio);
+        let transWidth = (editingObj.width / ratio) - (editingObjInfos.width / ratio);
+        let transHeight = (editingObj.height / ratio) - (editingObjInfos.height / ratio);
 
         if (ratio === 1) {
             transWidth /= 2;

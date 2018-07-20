@@ -181,8 +181,8 @@ class Cropper extends Component {
      */
     _calcRectDimensionFromPoint(x, y) {
         const canvas = this.getCanvas();
-        const canvasWidth = canvas.getWidth();
-        const canvasHeight = canvas.getHeight();
+        const canvasWidth = canvas.width;
+        const canvasHeight = canvas.height;
         const startX = this._startX;
         const startY = this._startY;
         let left = clamp(x, 0, startX);

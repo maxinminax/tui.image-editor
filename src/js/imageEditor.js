@@ -307,7 +307,7 @@ class ImageEditor {
         }
 
         if ((e.keyCode === keyCodes.BACKSPACE || e.keyCode === keyCodes.DEL)) {
-            e.preventDefault();
+            // e.preventDefault();
             this.removeActiveObject();
         }
     }
